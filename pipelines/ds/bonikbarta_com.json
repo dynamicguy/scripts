@@ -1,0 +1,122 @@
+{
+  "pipeline": "bonikbarta_com", 
+  "created": "2015-12-23T08:59:08.704Z", 
+  "modified": "2015-12-23T08:59:08.704Z", 
+  "properties": {
+    "refreshOlderThan": -1, 
+    "f.defaultMIMEType": "application/octet-stream", 
+    "refreshAll": true, 
+    "fetchDelayMS": 0, 
+    "initial_mapping": {
+      "mappings": [
+        {
+          "source": "charSet", 
+          "operation": "move", 
+          "target": "charSet_s"
+        }, 
+        {
+          "source": "fetchedDate", 
+          "operation": "move", 
+          "target": "fetchedDate_dt"
+        }, 
+        {
+          "source": "lastModified", 
+          "operation": "move", 
+          "target": "lastModified_dt"
+        }, 
+        {
+          "source": "signature", 
+          "operation": "move", 
+          "target": "dedupeSignature_s"
+        }, 
+        {
+          "source": "contentSignature", 
+          "operation": "move", 
+          "target": "signature_s"
+        }, 
+        {
+          "source": "length", 
+          "operation": "move", 
+          "target": "length_l"
+        }, 
+        {
+          "source": "mimeType", 
+          "operation": "move", 
+          "target": "mimeType_s"
+        }, 
+        {
+          "source": "parent", 
+          "operation": "move", 
+          "target": "parent_s"
+        }, 
+        {
+          "source": "owner", 
+          "operation": "move", 
+          "target": "owner_s"
+        }, 
+        {
+          "source": "group", 
+          "operation": "move", 
+          "target": "group_s"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "FromMap"
+    }, 
+    "retryEmit": true, 
+    "maxItems": -1, 
+    "f.respectMetaEquivRedirects": false, 
+    "crawlDBType": "in-memory", 
+    "splitArchives": false, 
+    "indexCrawlDBToSolr": false, 
+    "dedupe": false, 
+    "aliasExpiration": 1, 
+    "depth": -1, 
+    "fetchDelayMSPerHost": true, 
+    "restrictToTreeIgnoredHostPrefixes": [
+      "www."
+    ], 
+    "diagnosticMode": false, 
+    "refreshErrors": false, 
+    "f.timeoutMS": 20000, 
+    "deleteErrorsAfter": -1, 
+    "f.userAgentWebAddr": "http://khujun.com", 
+    "f.obeyRobots": true, 
+    "trackEmbeddedIDs": true, 
+    "failFastOnStartLinkFailure": true, 
+    "emitThreads": 5, 
+    "collection": "bd", 
+    "forceRefresh": false, 
+    "restrictToTreeAllowSubdomains": false, 
+    "f.scrapeLinksBeforeFiltering": false, 
+    "f.allowAllCertificates": false, 
+    "refreshStartLinks": false, 
+    "f.discardLinkURLQueries": true, 
+    "chunkSize": 50, 
+    "f.appendTrailingSlashToLinks": false, 
+    "fetchThreads": 5, 
+    "f.userAgentEmail": "crawler@khujun.com", 
+    "f.obeyRobotsDelay": true, 
+    "f.defaultCharSet": "UTF-8", 
+    "restrictToTreeUseHostAndPath": false, 
+    "f.userAgentName": "khujun.com", 
+    "f.maxSizeBytes": 4194304, 
+    "startLinks": [
+      "http://bonikbarta.com/news/2016-07-22/81197/%E0%A6%A8%E0%A6%BF%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%87-%E0%A6%85%E0%A6%82%E0%A6%B6-%E0%A6%A8%E0%A6%BF%E0%A6%9A%E0%A7%8D%E0%A6%9B%E0%A7%87--%E0%A6%A8%E0%A6%BE-%E0%A6%9F%E0%A7%87%E0%A6%B2%E0%A6%BF%E0%A6%A8%E0%A6%B0---/"
+    ], 
+    "retainOutlinks": false, 
+    "dedupeSaveSignature": false, 
+    "restrictToTree": true, 
+    "f.filteringRootTags": [
+      "body", 
+      "head"
+    ], 
+    "delete": true
+  }, 
+  "connector": "lucid.anda", 
+  "type": "web", 
+  "id": "bonikbarta_com"
+}

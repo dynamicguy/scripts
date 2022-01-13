@@ -1,0 +1,480 @@
+{
+  "stages": [
+    {
+      "returnXml": false, 
+      "contentField": "_raw_content_", 
+      "excludeContentTypes": [], 
+      "extractHtmlLinks": true, 
+      "includeContentTypes": [], 
+      "extractOtherLinks": false, 
+      "addOriginalContent": false, 
+      "includeImages": false, 
+      "label": "tika-parser", 
+      "flattenCompound": false, 
+      "skip": false, 
+      "keepOriginalStructure": false, 
+      "csvParsing": false, 
+      "contentEncoding": "binary", 
+      "type": "tika-parser", 
+      "id": "tika_content_csv_disabled_stage", 
+      "addFailedDocs": true
+    }, 
+    {
+      "keepParent": true, 
+      "mappings": [
+        {
+          "selectRule": "div.resp-tab-content > div > ul > li", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "features"
+        }, 
+        {
+          "selectRule": "div#intro > p", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "description"
+        }, 
+        {
+          "selectRule": "div.desc > p", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "details"
+        }, 
+        {
+          "selectRule": "div.item-price", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "price_s"
+        }, 
+        {
+          "selectRule": "div.item-info > h2", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "title"
+        }, 
+        {
+          "selectRule": "div.inner-banner > img", 
+          "attribute": "src", 
+          "multivalue": false, 
+          "field": "images"
+        }, 
+        {
+          "selectRule": "div#page-breadcrumb", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "breadcrumb"
+        }
+      ], 
+      "bodyField": "body", 
+      "label": "html-transform", 
+      "skip": false, 
+      "recordSelector": "body", 
+      "type": "html-transform", 
+      "id": "30b25986-63a0-4f36-a65c-92e1dcc3fd3a", 
+      "metadata": [
+        {
+          "field": "type", 
+          "value": "general"
+        }
+      ]
+    }, 
+    {
+      "mappings": [
+        {
+          "source": "Content-Encoding", 
+          "operation": "move", 
+          "target": "contentEncoding_s"
+        }, 
+        {
+          "source": "Character-Set", 
+          "operation": "move", 
+          "target": "characterSet_s"
+        }, 
+        {
+          "source": "Content-Length", 
+          "operation": "move", 
+          "target": "contentLength_l"
+        }, 
+        {
+          "source": "FileSize", 
+          "operation": "move", 
+          "target": "fileSize_l"
+        }, 
+        {
+          "source": "FileName", 
+          "operation": "move", 
+          "target": "fileName_s"
+        }, 
+        {
+          "source": "Content-Type", 
+          "operation": "move", 
+          "target": "mimeType_s"
+        }, 
+        {
+          "source": "MimeType", 
+          "operation": "move", 
+          "target": "mimeType_s"
+        }, 
+        {
+          "source": "Title", 
+          "operation": "move", 
+          "target": "title"
+        }, 
+        {
+          "source": "Description", 
+          "operation": "move", 
+          "target": "description"
+        }, 
+        {
+          "source": "Subject", 
+          "operation": "move", 
+          "target": "subject"
+        }, 
+        {
+          "source": "created", 
+          "operation": "move", 
+          "target": "dateCreated_dt"
+        }, 
+        {
+          "source": "ContentCreated", 
+          "operation": "move", 
+          "target": "dateCreated_dt"
+        }, 
+        {
+          "source": "meta:creation_date", 
+          "operation": "move", 
+          "target": "dateCreated_dt"
+        }, 
+        {
+          "source": "Creation-Date", 
+          "operation": "move", 
+          "target": "dateCreated_dt"
+        }, 
+        {
+          "source": "date", 
+          "operation": "move", 
+          "target": "dateCreated_dt"
+        }, 
+        {
+          "source": "Author", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "meta:author", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "Contributor", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "LastModifiedBy", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "Last-Author", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "fullname", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "meta:last-author", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "Last-Modified", 
+          "operation": "move", 
+          "target": "last_modified"
+        }, 
+        {
+          "source": "fileLastModified", 
+          "operation": "move", 
+          "target": "last_modified"
+        }, 
+        {
+          "source": "ContentLastModified", 
+          "operation": "move", 
+          "target": "last_modified"
+        }, 
+        {
+          "source": "Last-Save-Date", 
+          "operation": "move", 
+          "target": "last_modified"
+        }, 
+        {
+          "source": "fullText", 
+          "operation": "move", 
+          "target": "content_txt"
+        }, 
+        {
+          "source": "plainTextContent", 
+          "operation": "move", 
+          "target": "content_txt"
+        }, 
+        {
+          "source": "plainTextMessageContent", 
+          "operation": "move", 
+          "target": "content_txt"
+        }, 
+        {
+          "source": "body", 
+          "operation": "move", 
+          "target": "content_txt"
+        }, 
+        {
+          "source": "content", 
+          "operation": "move", 
+          "target": "content_txt"
+        }, 
+        {
+          "source": "keyword", 
+          "operation": "move", 
+          "target": "keywords"
+        }, 
+        {
+          "source": "Keywords", 
+          "operation": "move", 
+          "target": "keywords"
+        }, 
+        {
+          "source": "messageSubject", 
+          "operation": "move", 
+          "target": "title"
+        }, 
+        {
+          "source": "name", 
+          "operation": "move", 
+          "target": "title"
+        }, 
+        {
+          "source": "Page-Count", 
+          "operation": "move", 
+          "target": "pageCount_i"
+        }, 
+        {
+          "source": "PageCount", 
+          "operation": "move", 
+          "target": "pageCount_i"
+        }, 
+        {
+          "source": "Slide-Count", 
+          "operation": "move", 
+          "target": "pageCount_i"
+        }, 
+        {
+          "source": "Slides", 
+          "operation": "move", 
+          "target": "pageCount_i"
+        }, 
+        {
+          "source": "xmpTPg:NPages", 
+          "operation": "move", 
+          "target": "pageCount_i"
+        }, 
+        {
+          "source": "parsing_time", 
+          "operation": "move", 
+          "target": "parsing_time_l"
+        }, 
+        {
+          "source": "parsing", 
+          "operation": "move", 
+          "target": "parsing_s"
+        }, 
+        {
+          "source": "Comments", 
+          "operation": "move", 
+          "target": "comments"
+        }, 
+        {
+          "source": "resourceName", 
+          "operation": "move", 
+          "target": "resourcename_s"
+        }, 
+        {
+          "source": "resource_name", 
+          "operation": "move", 
+          "target": "resourcename_s"
+        }, 
+        {
+          "source": "Content-Location", 
+          "operation": "move", 
+          "target": "url"
+        }, 
+        {
+          "source": "meta:character-count", 
+          "operation": "move", 
+          "target": "character-count_i"
+        }, 
+        {
+          "source": "Word-Count", 
+          "operation": "move", 
+          "target": "wordCount_i"
+        }, 
+        {
+          "source": "type", 
+          "operation": "move", 
+          "target": "type_s"
+        }, 
+        {
+          "source": "X-Parsed-By", 
+          "operation": "move", 
+          "target": "xParsedBy_ss"
+        }, 
+        {
+          "source": "body.links.anchor", 
+          "operation": "move", 
+          "target": "body_links_anchor_ss"
+        }, 
+        {
+          "source": "body.links.params.alt", 
+          "operation": "move", 
+          "target": "body_links_params_alt_ss"
+        }, 
+        {
+          "source": "body.links.params.type", 
+          "operation": "move", 
+          "target": "body_links_params_type_ss"
+        }, 
+        {
+          "source": "body.links.title", 
+          "operation": "move", 
+          "target": "body_links_title_ss"
+        }, 
+        {
+          "source": "body.links.targetUri", 
+          "operation": "move", 
+          "target": "body_links_targetUri_ss"
+        }, 
+        {
+          "source": "/(.*)_[isltbfd]s?/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_txt/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_en/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_dts?/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_t[ilfd]/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_p/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_c/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_coordinate/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/attr_(.*)/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/random_(.*)/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/ignored_(.*)/", 
+          "operation": "keep"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "Dynamic_fields"
+    }, 
+    {
+      "outputKey": "languages", 
+      "skip": false, 
+      "outputType": "document", 
+      "id": "conn_language_detection", 
+      "source": [
+        "title"
+      ], 
+      "label": "lang-detect", 
+      "type": "lang-detect", 
+      "documentPostfix": "_lang"
+    }, 
+    {
+      "rules": [
+        {
+          "source": [
+            "description"
+          ], 
+          "entityTypes": [
+            {
+              "entityDefinitions": [
+                "colours.lst"
+              ], 
+              "name": "Color"
+            }
+          ], 
+          "additionalEntities": [], 
+          "target": "color", 
+          "caseSensitive": false
+        }, 
+        {
+          "source": [
+            "description"
+          ], 
+          "entityTypes": [
+            {
+              "entityDefinitions": [
+                "city.lst"
+              ], 
+              "name": "City"
+            }
+          ], 
+          "additionalEntities": [], 
+          "target": "city", 
+          "caseSensitive": false
+        }
+      ], 
+      "skip": false, 
+      "type": "lookup-extractor", 
+      "id": "lookup-extractor-default", 
+      "label": "lookup-extractor"
+    }, 
+    {
+      "bufferDocsForSolr": true, 
+      "label": "solr-index", 
+      "params": [], 
+      "condition": "doc.hasField('title');", 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(^.*)$/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "solr-default", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "grameenphone_com", 
+  "properties": {}
+}

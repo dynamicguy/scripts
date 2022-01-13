@@ -1,0 +1,123 @@
+{
+    "id": "en-sa_namshi_com",
+    "pipeline": "en-sa_namshi_com",
+    "connector": "lucid.anda",
+    "type": "web",
+    "properties": {
+        "startLinks": [
+            "https://en-sa.namshi.com/"
+        ],
+        "refreshOlderThan": -1,
+        "f.appendTrailingSlashToLinks": false,
+        "refreshErrors": false,
+        "restrictToTreeIgnoredHostPrefixes": [
+            "www."
+        ],
+        "dedupeSaveSignature": false,
+        "crawlDBType": "in-memory",
+        "csvWithHeader": true,
+        "f.discardLinkURLQueries": true,
+        "f.respectMetaEquivRedirects": false,
+        "fetchDelayMS": 0,
+        "splitArchives": true,
+        "refreshAll": true,
+        "f.defaultMIMEType": "application/octet-stream",
+        "restrictToTreeAllowSubdomains": false,
+        "csvFormat": "default",
+        "maxItems": -1,
+        "f.scrapeLinksBeforeFiltering": false,
+        "trackEmbeddedIDs": true,
+        "dedupe": false,
+        "splitCSV": true,
+        "f.allowAllCertificates": false,
+        "collection": "products",
+        "forceRefresh": false,
+        "f.obeyRobots": true,
+        "fetchDelayMSPerHost": true,
+        "reevaluateCrawlDBOnStart": false,
+        "indexCrawlDBToSolr": false,
+        "fetchThreads": 10,
+        "restrictToTree": true,
+        "retainOutlinks": true,
+        "f.defaultCharSet": "UTF-8",
+        "emitThreads": 5,
+        "diagnosticMode": false,
+        "delete": true,
+        "f.userAgentWebAddr": "http://3rud.com",
+        "initial_mapping": {
+            "id": "FromMap",
+            "mappings": [
+                {
+                    "source": "charSet",
+                    "target": "charSet_s",
+                    "operation": "move"
+                },
+                {
+                    "source": "fetchedDate",
+                    "target": "fetchedDate_dt",
+                    "operation": "move"
+                },
+                {
+                    "source": "lastModified",
+                    "target": "lastModified_dt",
+                    "operation": "move"
+                },
+                {
+                    "source": "signature",
+                    "target": "dedupeSignature_s",
+                    "operation": "move"
+                },
+                {
+                    "source": "contentSignature",
+                    "target": "signature_s",
+                    "operation": "move"
+                },
+                {
+                    "source": "length",
+                    "target": "length_l",
+                    "operation": "move"
+                },
+                {
+                    "source": "mimeType",
+                    "target": "mimeType_s",
+                    "operation": "move"
+                },
+                {
+                    "source": "parent",
+                    "target": "parent_s",
+                    "operation": "move"
+                },
+                {
+                    "source": "owner",
+                    "target": "owner_s",
+                    "operation": "move"
+                },
+                {
+                    "source": "group",
+                    "target": "group_s",
+                    "operation": "move"
+                }
+            ],
+            "skip": false,
+            "label": "field-mapping",
+            "type": "field-mapping"
+        },
+        "restrictToTreeUseHostAndPath": false,
+        "f.filteringRootTags": [
+            "body",
+            "head"
+        ],
+        "f.userAgentEmail": "crawler@3rud.com",
+        "f.timeoutMS": 10000,
+        "failFastOnStartLinkFailure": true,
+        "chunkSize": 50,
+        "f.obeyRobotsDelay": true,
+        "deleteErrorsAfter": -1,
+        "f.userAgentName": "3rud.com",
+        "retryEmit": true,
+        "depth": -1,
+        "refreshStartLinks": false,
+        "f.maxSizeBytes": 4194304,
+        "aliasExpiration": 1
+    }
+}

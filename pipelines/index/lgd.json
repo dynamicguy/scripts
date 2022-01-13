@@ -1,0 +1,113 @@
+{
+  "stages": [
+    {
+      "returnXml": true, 
+      "contentField": "_raw_content_", 
+      "excludeContentTypes": [], 
+      "extractHtmlLinks": true, 
+      "includeContentTypes": [], 
+      "extractOtherLinks": false, 
+      "addOriginalContent": false, 
+      "includeImages": false, 
+      "label": "tika-parser", 
+      "flattenCompound": false, 
+      "skip": false, 
+      "keepOriginalStructure": true, 
+      "csvParsing": false, 
+      "contentEncoding": "binary", 
+      "type": "tika-parser", 
+      "id": "ad6d833f-ef74-4494-90f3-1490f8e011c3", 
+      "addFailedDocs": false
+    }, 
+    {
+      "keepParent": true, 
+      "mappings": [
+        {
+          "selectRule": "div.page-content > div.page-title", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "title"
+        }, 
+        {
+          "selectRule": "meta[name=\"keywords\"]", 
+          "attribute": "content", 
+          "multivalue": true, 
+          "field": "keywords"
+        }, 
+        {
+          "selectRule": "div.article-content > div", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "description"
+        }
+      ], 
+      "bodyField": "body", 
+      "label": "html-transform", 
+      "skip": false, 
+      "recordSelector": "body", 
+      "type": "html-transform", 
+      "id": "61bf0ee6-7eed-48c3-84de-2c327a21440d", 
+      "metadata": [
+        {
+          "field": "type", 
+          "value": "government"
+        }
+      ]
+    }, 
+    {
+      "mappings": [
+        {
+          "source": "/(.*?)lat(itude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }, 
+        {
+          "source": "/(.*?)lon(gitude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "unmapped": {
+        "source": "/(.*)/", 
+        "operation": "move", 
+        "target": "$1_ss"
+      }, 
+      "type": "field-mapping", 
+      "id": "29568de2-26fe-43a4-8b72-e9d9a123165e"
+    }, 
+    {
+      "outputKey": "languages", 
+      "skip": false, 
+      "outputType": "document", 
+      "id": "81e8886f-2eaa-42c3-9e00-1aff06238fe1", 
+      "source": [
+        "title", 
+        "body"
+      ], 
+      "label": "lang-detect", 
+      "type": "lang-detect", 
+      "documentPostfix": "_lang"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "condition": "doc.hasField(\"title\");", 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(.*)/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "2473362d-369b-4f38-a4d3-93a242d47da6", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "lgd", 
+  "properties": {}
+}

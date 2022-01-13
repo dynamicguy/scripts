@@ -1,0 +1,120 @@
+{
+  "stages": [
+    {
+      "returnXml": true, 
+      "contentField": "_raw_content_", 
+      "excludeContentTypes": [], 
+      "extractHtmlLinks": true, 
+      "includeContentTypes": [], 
+      "extractOtherLinks": false, 
+      "addOriginalContent": false, 
+      "includeImages": false, 
+      "label": "tika-parser", 
+      "flattenCompound": false, 
+      "skip": false, 
+      "keepOriginalStructure": true, 
+      "csvParsing": false, 
+      "contentEncoding": "binary", 
+      "type": "tika-parser", 
+      "id": "631db1cd-8a14-4849-ac73-fefc855c58d9", 
+      "addFailedDocs": false
+    }, 
+    {
+      "keepParent": true, 
+      "mappings": [
+        {
+          "selectRule": "div > div > h5.course_instructor> a", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "author"
+        }, 
+        {
+          "selectRule": "div > div > ul.breadcrumbs > li", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "breadcrumb"
+        }, 
+        {
+          "selectRule": "div > div#item-header-avatar > a > img", 
+          "attribute": "src", 
+          "multivalue": false, 
+          "field": "images"
+        }, 
+        {
+          "selectRule": "section#content > div > div > div > div:nth-child(1)", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "description"
+        }, 
+        {
+          "selectRule": "div > div > div > div.pagetitle > h1", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "title"
+        }
+      ], 
+      "bodyField": "body", 
+      "label": "html-transform", 
+      "skip": false, 
+      "recordSelector": "body", 
+      "type": "html-transform", 
+      "id": "7153af83-0661-4a93-9ab3-2029cc9f7217", 
+      "metadata": [
+        {
+          "field": "type", 
+          "value": "Education"
+        }
+      ]
+    }, 
+    {
+      "mappings": [
+        {
+          "source": "/(.*?)lat(itude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }, 
+        {
+          "source": "/(.*?)lon(gitude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "bd02cd69-0a55-475e-ba37-3e2d9a42d27f"
+    }, 
+    {
+      "outputKey": "languages", 
+      "skip": false, 
+      "outputType": "document", 
+      "id": "0025e1bc-b603-4dac-964d-82cb4a739917", 
+      "source": [
+        "title", 
+        "body"
+      ], 
+      "label": "lang-detect", 
+      "type": "lang-detect", 
+      "documentPostfix": "_lang"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "condition": "doc.hasField(\"title\");", 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(^.*)$/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "35a9fe46-bb6a-41e4-8b53-dd8f73eb2139", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "eshikhon_com", 
+  "properties": {}
+}

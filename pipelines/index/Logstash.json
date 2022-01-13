@@ -1,0 +1,48 @@
+{
+  "stages": [
+    {
+      "mappings": [
+        {
+          "source": "logstash_timestamp", 
+          "operation": "move", 
+          "target": "logstash_timestamp_tdt"
+        }, 
+        {
+          "source": "logstash_version", 
+          "operation": "move", 
+          "target": "logstash_version_s"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "default_logstash_field_mapper"
+    }, 
+    {
+      "mappings": [], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "empty_field_mapper"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(^.*)$/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "solr-default", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "Logstash", 
+  "properties": {}
+}

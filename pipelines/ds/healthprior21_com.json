@@ -1,0 +1,123 @@
+{
+  "pipeline": "healthprior21_com", 
+  "description": "healthprior21_com", 
+  "created": "2016-03-20T14:52:30.778Z", 
+  "modified": "2016-03-20T14:52:30.778Z", 
+  "properties": {
+    "refreshOlderThan": -1, 
+    "f.defaultMIMEType": "application/octet-stream", 
+    "refreshAll": true, 
+    "fetchDelayMS": 0, 
+    "initial_mapping": {
+      "mappings": [
+        {
+          "source": "charSet", 
+          "operation": "move", 
+          "target": "charSet_s"
+        }, 
+        {
+          "source": "fetchedDate", 
+          "operation": "move", 
+          "target": "fetchedDate_dt"
+        }, 
+        {
+          "source": "lastModified", 
+          "operation": "move", 
+          "target": "lastModified_dt"
+        }, 
+        {
+          "source": "signature", 
+          "operation": "move", 
+          "target": "dedupeSignature_s"
+        }, 
+        {
+          "source": "contentSignature", 
+          "operation": "move", 
+          "target": "signature_s"
+        }, 
+        {
+          "source": "length", 
+          "operation": "move", 
+          "target": "length_l"
+        }, 
+        {
+          "source": "mimeType", 
+          "operation": "move", 
+          "target": "mimeType_s"
+        }, 
+        {
+          "source": "parent", 
+          "operation": "move", 
+          "target": "parent_s"
+        }, 
+        {
+          "source": "owner", 
+          "operation": "move", 
+          "target": "owner_s"
+        }, 
+        {
+          "source": "group", 
+          "operation": "move", 
+          "target": "group_s"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "FromMap"
+    }, 
+    "retryEmit": true, 
+    "maxItems": -1, 
+    "f.respectMetaEquivRedirects": false, 
+    "crawlDBType": "in-memory", 
+    "splitArchives": false, 
+    "indexCrawlDBToSolr": false, 
+    "dedupe": false, 
+    "aliasExpiration": 1, 
+    "depth": -1, 
+    "fetchDelayMSPerHost": true, 
+    "restrictToTreeIgnoredHostPrefixes": [
+      "www."
+    ], 
+    "diagnosticMode": false, 
+    "refreshErrors": false, 
+    "f.timeoutMS": 20000, 
+    "deleteErrorsAfter": -1, 
+    "f.userAgentWebAddr": "http://khujun.com", 
+    "f.obeyRobots": true, 
+    "trackEmbeddedIDs": true, 
+    "failFastOnStartLinkFailure": true, 
+    "emitThreads": 5, 
+    "collection": "bd", 
+    "forceRefresh": false, 
+    "restrictToTreeAllowSubdomains": false, 
+    "f.scrapeLinksBeforeFiltering": false, 
+    "f.allowAllCertificates": false, 
+    "refreshStartLinks": false, 
+    "f.discardLinkURLQueries": true, 
+    "chunkSize": 50, 
+    "f.appendTrailingSlashToLinks": false, 
+    "fetchThreads": 5, 
+    "f.userAgentEmail": "crawler@khujun.com", 
+    "f.obeyRobotsDelay": true, 
+    "f.defaultCharSet": "UTF-8", 
+    "restrictToTreeUseHostAndPath": false, 
+    "f.userAgentName": "khujun.com", 
+    "f.maxSizeBytes": 4194304, 
+    "startLinks": [
+      "http://www.healthprior21.com/health-tips/20160316054954-%E0%A6%98%E0%A7%81%E0%A6%AE%E0%A7%87%E0%A6%B0-%E0%A6%86"
+    ], 
+    "retainOutlinks": false, 
+    "dedupeSaveSignature": false, 
+    "restrictToTree": true, 
+    "f.filteringRootTags": [
+      "body", 
+      "head"
+    ], 
+    "delete": true
+  }, 
+  "connector": "lucid.anda", 
+  "type": "web", 
+  "id": "healthprior21_com"
+}

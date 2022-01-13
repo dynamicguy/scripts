@@ -1,0 +1,1604 @@
+[ {
+  "id" : "Documents_Parsing_debug_logging",
+  "stages" : [ {
+    "type" : "index-logging",
+    "id" : "38a61bee-c0a0-4fff-b581-ab2477506f16",
+    "detailed" : true,
+    "type" : "index-logging",
+    "skip" : false,
+    "label" : "index-logging"
+  }, {
+    "type" : "tika-parser",
+    "id" : "tika_content_csv_disabled_stage",
+    "includeImages" : true,
+    "flattenCompound" : false,
+    "addFailedDocs" : true,
+    "addOriginalContent" : false,
+    "contentField" : "_raw_content_",
+    "contentEncoding" : "binary",
+    "returnXml" : false,
+    "keepOriginalStructure" : false,
+    "extractHtmlLinks" : true,
+    "extractOtherLinks" : false,
+    "csvParsing" : false,
+    "includeContentTypes" : [ ],
+    "excludeContentTypes" : [ ],
+    "type" : "tika-parser",
+    "skip" : false,
+    "label" : "tika-parser"
+  }, {
+    "type" : "index-logging",
+    "id" : "3fbb9591-6dd6-4097-98a2-a3cbc04e1880",
+    "detailed" : true,
+    "type" : "index-logging",
+    "skip" : false,
+    "label" : "index-logging"
+  }, {
+    "type" : "field-mapping",
+    "id" : "Dynamic_fields",
+    "mappings" : [ {
+      "source" : "Content-Encoding",
+      "target" : "contentEncoding_s",
+      "operation" : "move"
+    }, {
+      "source" : "Character-Set",
+      "target" : "characterSet_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Length",
+      "target" : "contentLength_l",
+      "operation" : "move"
+    }, {
+      "source" : "FileSize",
+      "target" : "fileSize_l",
+      "operation" : "move"
+    }, {
+      "source" : "FileName",
+      "target" : "fileName_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Type",
+      "target" : "mimeType_s",
+      "operation" : "move"
+    }, {
+      "source" : "MimeType",
+      "target" : "mimeType_s",
+      "operation" : "move"
+    }, {
+      "source" : "Title",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "Description",
+      "target" : "description",
+      "operation" : "move"
+    }, {
+      "source" : "Subject",
+      "target" : "subject",
+      "operation" : "move"
+    }, {
+      "source" : "created",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "ContentCreated",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "meta:creation_date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "Creation-Date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "Author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "meta:author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Contributor",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "LastModifiedBy",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "fullname",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "meta:last-author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Modified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "fileLastModified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "ContentLastModified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Save-Date",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "fullText",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "plainTextContent",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "plainTextMessageContent",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "body",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "content",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "keyword",
+      "target" : "keywords",
+      "operation" : "move"
+    }, {
+      "source" : "Keywords",
+      "target" : "keywords",
+      "operation" : "move"
+    }, {
+      "source" : "messageSubject",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "name",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "Page-Count",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "PageCount",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "Slide-Count",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "Slides",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "xmpTPg:NPages",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "parsing_time",
+      "target" : "parsing_time_l",
+      "operation" : "move"
+    }, {
+      "source" : "parsing",
+      "target" : "parsing_s",
+      "operation" : "move"
+    }, {
+      "source" : "Comments",
+      "target" : "comments",
+      "operation" : "move"
+    }, {
+      "source" : "resourceName",
+      "target" : "resourcename_s",
+      "operation" : "move"
+    }, {
+      "source" : "resource_name",
+      "target" : "resourcename_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Location",
+      "target" : "url",
+      "operation" : "move"
+    }, {
+      "source" : "meta:character-count",
+      "target" : "character-count_i",
+      "operation" : "move"
+    }, {
+      "source" : "Word-Count",
+      "target" : "wordCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "type",
+      "target" : "type_s",
+      "operation" : "move"
+    }, {
+      "source" : "X-Parsed-By",
+      "target" : "xParsedBy_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.anchor",
+      "target" : "body_links_anchor_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.params.alt",
+      "target" : "body_links_params_alt_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.params.type",
+      "target" : "body_links_params_type_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.title",
+      "target" : "body_links_title_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.targetUri",
+      "target" : "body_links_targetUri_ss",
+      "operation" : "move"
+    }, {
+      "source" : "Brightness Value",
+      "target" : "Brightness_Value_ss",
+      "operation" : "move"
+    }, {
+      "source" : "/(.*)_[isltbfd]s?/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_txt/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_en/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_dts?/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_t[ilfd]/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_p/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_c/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_coordinate/",
+      "operation" : "keep"
+    }, {
+      "source" : "/attr_(.*)/",
+      "operation" : "keep"
+    }, {
+      "source" : "/random_(.*)/",
+      "operation" : "keep"
+    }, {
+      "source" : "/ignored_(.*)/",
+      "operation" : "keep"
+    } ],
+    "reservedFieldsMappingAllowed" : false,
+    "type" : "field-mapping",
+    "skip" : false,
+    "label" : "field-mapping"
+  }, {
+    "type" : "index-logging",
+    "id" : "7729293f-c3a8-433a-a4ba-c301eccbc2f7",
+    "detailed" : true,
+    "type" : "index-logging",
+    "skip" : false,
+    "label" : "index-logging"
+  }, {
+    "type" : "lang-detect",
+    "id" : "conn_language_detection",
+    "source" : [ "content", "title" ],
+    "outputType" : "document",
+    "outputKey" : "languages",
+    "documentPostfix" : "_lang",
+    "type" : "lang-detect",
+    "skip" : false,
+    "label" : "lang-detect"
+  }, {
+    "type" : "index-logging",
+    "id" : "d8989b5b-f42b-481e-b619-d02f16dffd36",
+    "detailed" : true,
+    "type" : "index-logging",
+    "skip" : false,
+    "label" : "index-logging"
+  }, {
+    "type" : "solr-index",
+    "id" : "solr-default",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : false,
+    "unmapped" : {
+      "source" : "/(^.*)$/",
+      "target" : "$1_txt",
+      "operation" : "move"
+    },
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "CSV",
+  "stages" : [ {
+    "type" : "csv-parser",
+    "id" : "csv_parse_stage_default",
+    "sourceField" : "_raw_content_",
+    "sourceEncoding" : "binary",
+    "lineSeparator" : "\\n",
+    "delimiter" : ",",
+    "quote" : "\"",
+    "quoteEscape" : "\"",
+    "headersHandling" : "parse",
+    "headers" : [ ],
+    "comment" : "#",
+    "nullValue" : "<NULL>",
+    "emptyValue" : "<EMPTY>",
+    "ignoreLeadingWhitespaces" : false,
+    "ignoreTrailingWhitespaces" : false,
+    "skipEmptyLines" : true,
+    "inheritFields" : false,
+    "type" : "csv-parser",
+    "skip" : false,
+    "label" : "csv-parser"
+  }, {
+    "type" : "field-mapping",
+    "id" : "empty_field_mapper",
+    "mappings" : [ ],
+    "reservedFieldsMappingAllowed" : false,
+    "type" : "field-mapping",
+    "skip" : false,
+    "label" : "field-mapping"
+  }, {
+    "type" : "solr-index",
+    "id" : "solr-default",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : false,
+    "unmapped" : {
+      "source" : "/(^.*)$/",
+      "target" : "$1_txt",
+      "operation" : "move"
+    },
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "_signals_ingest",
+  "stages" : [ {
+    "type" : "signal-formatter",
+    "id" : "ingest-signals",
+    "flatten" : true,
+    "allowedTypes" : [ ],
+    "undefinedType" : "general",
+    "timestampLocale" : "en-US",
+    "type" : "signal-formatter",
+    "skip" : false,
+    "label" : "signal-formatter"
+  }, {
+    "type" : "field-mapping",
+    "id" : "mapping-signals",
+    "mappings" : [ {
+      "source" : "type",
+      "target" : "type_s",
+      "operation" : "move"
+    }, {
+      "source" : "flag",
+      "target" : "flag_s",
+      "operation" : "move"
+    }, {
+      "source" : "params.flag",
+      "target" : "flag_s",
+      "operation" : "move"
+    }, {
+      "source" : "timestamp",
+      "target" : "timestamp_tdt",
+      "operation" : "move"
+    }, {
+      "source" : "params.count",
+      "target" : "count_i",
+      "operation" : "move"
+    }, {
+      "source" : "params.weight",
+      "target" : "weight_d",
+      "operation" : "move"
+    }, {
+      "source" : "params.query",
+      "target" : "query_s",
+      "operation" : "copy"
+    }, {
+      "source" : "params.query",
+      "target" : "query_t",
+      "operation" : "move"
+    }, {
+      "source" : "params.docId",
+      "target" : "doc_id_s",
+      "operation" : "move"
+    }, {
+      "source" : "params.userId",
+      "target" : "user_id_s",
+      "operation" : "move"
+    }, {
+      "source" : "params.sessionId",
+      "target" : "session_id_s",
+      "operation" : "move"
+    }, {
+      "source" : "params.filterQueries",
+      "target" : "filters_s",
+      "operation" : "move"
+    }, {
+      "source" : "/params\\.(.*)(?<!_.{1,2})$/",
+      "target" : "params.$1_s",
+      "operation" : "move"
+    } ],
+    "reservedFieldsMappingAllowed" : false,
+    "type" : "field-mapping",
+    "skip" : false,
+    "label" : "field-mapping"
+  }, {
+    "type" : "solr-index",
+    "id" : "solr-signals",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : true,
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "Discard",
+  "stages" : [ ],
+  "properties" : { }
+}, {
+  "id" : "JSON",
+  "stages" : [ {
+    "type" : "json-parser",
+    "id" : "json_parse_stage_default",
+    "sourceField" : "_raw_content_",
+    "sourceEncoding" : "binary",
+    "splitPath" : "/",
+    "mappingRules" : [ {
+      "path" : "/**"
+    } ],
+    "inheritFields" : false,
+    "type" : "json-parser",
+    "skip" : false,
+    "label" : "json-parser"
+  }, {
+    "type" : "field-mapping",
+    "id" : "empty_field_mapper",
+    "mappings" : [ ],
+    "reservedFieldsMappingAllowed" : false,
+    "type" : "field-mapping",
+    "skip" : false,
+    "label" : "field-mapping"
+  }, {
+    "type" : "solr-index",
+    "id" : "solr-default",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : false,
+    "unmapped" : {
+      "source" : "/(^.*)$/",
+      "target" : "$1_txt",
+      "operation" : "move"
+    },
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "Documents_Parsing",
+  "stages" : [ {
+    "type" : "tika-parser",
+    "id" : "tika_content_csv_disabled_stage",
+    "includeImages" : true,
+    "flattenCompound" : false,
+    "addFailedDocs" : true,
+    "addOriginalContent" : false,
+    "contentField" : "_raw_content_",
+    "contentEncoding" : "binary",
+    "returnXml" : false,
+    "keepOriginalStructure" : false,
+    "extractHtmlLinks" : true,
+    "extractOtherLinks" : false,
+    "csvParsing" : false,
+    "includeContentTypes" : [ ],
+    "excludeContentTypes" : [ ],
+    "type" : "tika-parser",
+    "skip" : false,
+    "label" : "tika-parser"
+  }, {
+    "type" : "field-mapping",
+    "id" : "Dynamic_fields",
+    "mappings" : [ {
+      "source" : "Content-Encoding",
+      "target" : "contentEncoding_s",
+      "operation" : "move"
+    }, {
+      "source" : "Character-Set",
+      "target" : "characterSet_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Length",
+      "target" : "contentLength_l",
+      "operation" : "move"
+    }, {
+      "source" : "FileSize",
+      "target" : "fileSize_l",
+      "operation" : "move"
+    }, {
+      "source" : "FileName",
+      "target" : "fileName_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Type",
+      "target" : "mimeType_s",
+      "operation" : "move"
+    }, {
+      "source" : "MimeType",
+      "target" : "mimeType_s",
+      "operation" : "move"
+    }, {
+      "source" : "Title",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "Description",
+      "target" : "description",
+      "operation" : "move"
+    }, {
+      "source" : "Subject",
+      "target" : "subject",
+      "operation" : "move"
+    }, {
+      "source" : "created",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "ContentCreated",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "meta:creation_date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "Creation-Date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "Author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "meta:author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Contributor",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "LastModifiedBy",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "fullname",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "meta:last-author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Modified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "fileLastModified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "ContentLastModified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Save-Date",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "fullText",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "plainTextContent",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "plainTextMessageContent",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "body",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "content",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "keyword",
+      "target" : "keywords",
+      "operation" : "move"
+    }, {
+      "source" : "Keywords",
+      "target" : "keywords",
+      "operation" : "move"
+    }, {
+      "source" : "messageSubject",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "name",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "Page-Count",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "PageCount",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "Slide-Count",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "Slides",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "xmpTPg:NPages",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "parsing_time",
+      "target" : "parsing_time_l",
+      "operation" : "move"
+    }, {
+      "source" : "parsing",
+      "target" : "parsing_s",
+      "operation" : "move"
+    }, {
+      "source" : "Comments",
+      "target" : "comments",
+      "operation" : "move"
+    }, {
+      "source" : "resourceName",
+      "target" : "resourcename_s",
+      "operation" : "move"
+    }, {
+      "source" : "resource_name",
+      "target" : "resourcename_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Location",
+      "target" : "url",
+      "operation" : "move"
+    }, {
+      "source" : "meta:character-count",
+      "target" : "character-count_i",
+      "operation" : "move"
+    }, {
+      "source" : "Word-Count",
+      "target" : "wordCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "type",
+      "target" : "type_s",
+      "operation" : "move"
+    }, {
+      "source" : "X-Parsed-By",
+      "target" : "xParsedBy_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.anchor",
+      "target" : "body_links_anchor_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.params.alt",
+      "target" : "body_links_params_alt_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.params.type",
+      "target" : "body_links_params_type_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.title",
+      "target" : "body_links_title_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.targetUri",
+      "target" : "body_links_targetUri_ss",
+      "operation" : "move"
+    }, {
+      "source" : "Brightness Value",
+      "target" : "Brightness_Value_ss",
+      "operation" : "move"
+    }, {
+      "source" : "/(.*)_[isltbfd]s?/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_txt/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_en/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_dts?/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_t[ilfd]/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_p/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_c/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_coordinate/",
+      "operation" : "keep"
+    }, {
+      "source" : "/attr_(.*)/",
+      "operation" : "keep"
+    }, {
+      "source" : "/random_(.*)/",
+      "operation" : "keep"
+    }, {
+      "source" : "/ignored_(.*)/",
+      "operation" : "keep"
+    } ],
+    "reservedFieldsMappingAllowed" : false,
+    "type" : "field-mapping",
+    "skip" : false,
+    "label" : "field-mapping"
+  }, {
+    "type" : "lang-detect",
+    "id" : "conn_language_detection",
+    "source" : [ "content", "title" ],
+    "outputType" : "document",
+    "outputKey" : "languages",
+    "documentPostfix" : "_lang",
+    "type" : "lang-detect",
+    "skip" : false,
+    "label" : "lang-detect"
+  }, {
+    "type" : "solr-index",
+    "id" : "solr-default",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : false,
+    "unmapped" : {
+      "source" : "/(^.*)$/",
+      "target" : "$1_txt",
+      "operation" : "move"
+    },
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "Logstash",
+  "stages" : [ {
+    "type" : "field-mapping",
+    "id" : "default_logstash_field_mapper",
+    "mappings" : [ {
+      "source" : "logstash_timestamp",
+      "target" : "logstash_timestamp_tdt",
+      "operation" : "move"
+    }, {
+      "source" : "logstash_version",
+      "target" : "logstash_version_s",
+      "operation" : "move"
+    } ],
+    "reservedFieldsMappingAllowed" : false,
+    "type" : "field-mapping",
+    "skip" : false,
+    "label" : "field-mapping"
+  }, {
+    "type" : "field-mapping",
+    "id" : "empty_field_mapper",
+    "mappings" : [ ],
+    "reservedFieldsMappingAllowed" : false,
+    "type" : "field-mapping",
+    "skip" : false,
+    "label" : "field-mapping"
+  }, {
+    "type" : "solr-index",
+    "id" : "solr-default",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : false,
+    "unmapped" : {
+      "source" : "/(^.*)$/",
+      "target" : "$1_txt",
+      "operation" : "move"
+    },
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "_aggregation_rollup",
+  "stages" : [ {
+    "type" : "solr-index",
+    "id" : "solr-signals",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : true,
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "default",
+  "stages" : [ {
+    "type" : "solr-index",
+    "id" : "solr-default",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : false,
+    "unmapped" : {
+      "source" : "/(^.*)$/",
+      "target" : "$1_txt",
+      "operation" : "move"
+    },
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "Source_Code",
+  "stages" : [ {
+    "type" : "tika-parser",
+    "id" : "tika_content_csv_disabled_stage",
+    "includeImages" : true,
+    "flattenCompound" : false,
+    "addFailedDocs" : true,
+    "addOriginalContent" : false,
+    "contentField" : "_raw_content_",
+    "contentEncoding" : "binary",
+    "returnXml" : false,
+    "keepOriginalStructure" : false,
+    "extractHtmlLinks" : true,
+    "extractOtherLinks" : false,
+    "csvParsing" : false,
+    "includeContentTypes" : [ ],
+    "excludeContentTypes" : [ ],
+    "type" : "tika-parser",
+    "skip" : false,
+    "label" : "tika-parser"
+  }, {
+    "type" : "field-mapping",
+    "id" : "Dynamic_fields",
+    "mappings" : [ {
+      "source" : "Content-Encoding",
+      "target" : "contentEncoding_s",
+      "operation" : "move"
+    }, {
+      "source" : "Character-Set",
+      "target" : "characterSet_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Length",
+      "target" : "contentLength_l",
+      "operation" : "move"
+    }, {
+      "source" : "FileSize",
+      "target" : "fileSize_l",
+      "operation" : "move"
+    }, {
+      "source" : "FileName",
+      "target" : "fileName_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Type",
+      "target" : "mimeType_s",
+      "operation" : "move"
+    }, {
+      "source" : "MimeType",
+      "target" : "mimeType_s",
+      "operation" : "move"
+    }, {
+      "source" : "Title",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "Description",
+      "target" : "description",
+      "operation" : "move"
+    }, {
+      "source" : "Subject",
+      "target" : "subject",
+      "operation" : "move"
+    }, {
+      "source" : "created",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "ContentCreated",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "meta:creation_date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "Creation-Date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "Author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "meta:author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Contributor",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "LastModifiedBy",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "fullname",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "meta:last-author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Modified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "fileLastModified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "ContentLastModified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Save-Date",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "fullText",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "plainTextContent",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "plainTextMessageContent",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "body",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "content",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "keyword",
+      "target" : "keywords",
+      "operation" : "move"
+    }, {
+      "source" : "Keywords",
+      "target" : "keywords",
+      "operation" : "move"
+    }, {
+      "source" : "messageSubject",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "name",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "Page-Count",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "PageCount",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "Slide-Count",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "Slides",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "xmpTPg:NPages",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "parsing_time",
+      "target" : "parsing_time_l",
+      "operation" : "move"
+    }, {
+      "source" : "parsing",
+      "target" : "parsing_s",
+      "operation" : "move"
+    }, {
+      "source" : "Comments",
+      "target" : "comments",
+      "operation" : "move"
+    }, {
+      "source" : "resourceName",
+      "target" : "resourcename_s",
+      "operation" : "move"
+    }, {
+      "source" : "resource_name",
+      "target" : "resourcename_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Location",
+      "target" : "url",
+      "operation" : "move"
+    }, {
+      "source" : "meta:character-count",
+      "target" : "character-count_i",
+      "operation" : "move"
+    }, {
+      "source" : "Word-Count",
+      "target" : "wordCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "type",
+      "target" : "type_s",
+      "operation" : "move"
+    }, {
+      "source" : "X-Parsed-By",
+      "target" : "xParsedBy_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.anchor",
+      "target" : "body_links_anchor_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.params.alt",
+      "target" : "body_links_params_alt_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.params.type",
+      "target" : "body_links_params_type_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.title",
+      "target" : "body_links_title_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.targetUri",
+      "target" : "body_links_targetUri_ss",
+      "operation" : "move"
+    }, {
+      "source" : "Brightness Value",
+      "target" : "Brightness_Value_ss",
+      "operation" : "move"
+    }, {
+      "source" : "/(.*)_[isltbfd]s?/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_txt/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_en/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_dts?/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_t[ilfd]/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_p/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_c/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_coordinate/",
+      "operation" : "keep"
+    }, {
+      "source" : "/attr_(.*)/",
+      "operation" : "keep"
+    }, {
+      "source" : "/random_(.*)/",
+      "operation" : "keep"
+    }, {
+      "source" : "/ignored_(.*)/",
+      "operation" : "keep"
+    } ],
+    "reservedFieldsMappingAllowed" : false,
+    "type" : "field-mapping",
+    "skip" : false,
+    "label" : "field-mapping"
+  }, {
+    "type" : "field-mapping",
+    "id" : "default_svn_field_mapper",
+    "mappings" : [ {
+      "source" : "svn:eol-style",
+      "target" : "svn_eol_style_s",
+      "operation" : "move"
+    }, {
+      "source" : "svn:keywords",
+      "target" : "svn_keywords",
+      "operation" : "move"
+    }, {
+      "source" : "svn:last-author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "svn:last-change-date",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "svn:last-change-revision",
+      "target" : "svn_last_change_revision_s",
+      "operation" : "move"
+    }, {
+      "source" : "svn:mergeinfo",
+      "target" : "svn_mergeinfo_txt",
+      "operation" : "move"
+    }, {
+      "source" : "svn:mime-type",
+      "target" : "svn_mime_type_ss",
+      "operation" : "move"
+    } ],
+    "reservedFieldsMappingAllowed" : false,
+    "type" : "field-mapping",
+    "skip" : false,
+    "label" : "field-mapping"
+  }, {
+    "type" : "solr-index",
+    "id" : "solr-default",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : false,
+    "unmapped" : {
+      "source" : "/(^.*)$/",
+      "target" : "$1_txt",
+      "operation" : "move"
+    },
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "conn_solr",
+  "stages" : [ {
+    "type" : "tika-parser",
+    "id" : "conn_tika",
+    "includeImages" : true,
+    "flattenCompound" : false,
+    "addFailedDocs" : true,
+    "addOriginalContent" : true,
+    "contentField" : "_raw_content_",
+    "contentEncoding" : "binary",
+    "returnXml" : false,
+    "keepOriginalStructure" : false,
+    "extractHtmlLinks" : true,
+    "extractOtherLinks" : false,
+    "csvParsing" : true,
+    "includeContentTypes" : [ ],
+    "excludeContentTypes" : [ ],
+    "type" : "tika-parser",
+    "skip" : false,
+    "label" : "tika-parser"
+  }, {
+    "type" : "field-mapping",
+    "id" : "Dynamic_fields",
+    "mappings" : [ {
+      "source" : "Content-Encoding",
+      "target" : "contentEncoding_s",
+      "operation" : "move"
+    }, {
+      "source" : "Character-Set",
+      "target" : "characterSet_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Length",
+      "target" : "contentLength_l",
+      "operation" : "move"
+    }, {
+      "source" : "FileSize",
+      "target" : "fileSize_l",
+      "operation" : "move"
+    }, {
+      "source" : "FileName",
+      "target" : "fileName_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Type",
+      "target" : "mimeType_s",
+      "operation" : "move"
+    }, {
+      "source" : "MimeType",
+      "target" : "mimeType_s",
+      "operation" : "move"
+    }, {
+      "source" : "Title",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "Description",
+      "target" : "description",
+      "operation" : "move"
+    }, {
+      "source" : "Subject",
+      "target" : "subject",
+      "operation" : "move"
+    }, {
+      "source" : "created",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "ContentCreated",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "meta:creation_date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "Creation-Date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "date",
+      "target" : "dateCreated_dt",
+      "operation" : "move"
+    }, {
+      "source" : "Author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "meta:author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Contributor",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "LastModifiedBy",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "fullname",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "meta:last-author",
+      "target" : "author",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Modified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "fileLastModified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "ContentLastModified",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "Last-Save-Date",
+      "target" : "last_modified",
+      "operation" : "move"
+    }, {
+      "source" : "fullText",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "plainTextContent",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "plainTextMessageContent",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "body",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "content",
+      "target" : "content_txt",
+      "operation" : "move"
+    }, {
+      "source" : "keyword",
+      "target" : "keywords",
+      "operation" : "move"
+    }, {
+      "source" : "Keywords",
+      "target" : "keywords",
+      "operation" : "move"
+    }, {
+      "source" : "messageSubject",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "name",
+      "target" : "title",
+      "operation" : "move"
+    }, {
+      "source" : "Page-Count",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "PageCount",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "Slide-Count",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "Slides",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "xmpTPg:NPages",
+      "target" : "pageCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "parsing_time",
+      "target" : "parsing_time_l",
+      "operation" : "move"
+    }, {
+      "source" : "parsing",
+      "target" : "parsing_s",
+      "operation" : "move"
+    }, {
+      "source" : "Comments",
+      "target" : "comments",
+      "operation" : "move"
+    }, {
+      "source" : "resourceName",
+      "target" : "resourcename_s",
+      "operation" : "move"
+    }, {
+      "source" : "resource_name",
+      "target" : "resourcename_s",
+      "operation" : "move"
+    }, {
+      "source" : "Content-Location",
+      "target" : "url",
+      "operation" : "move"
+    }, {
+      "source" : "meta:character-count",
+      "target" : "character-count_i",
+      "operation" : "move"
+    }, {
+      "source" : "Word-Count",
+      "target" : "wordCount_i",
+      "operation" : "move"
+    }, {
+      "source" : "type",
+      "target" : "type_s",
+      "operation" : "move"
+    }, {
+      "source" : "X-Parsed-By",
+      "target" : "xParsedBy_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.anchor",
+      "target" : "body_links_anchor_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.params.alt",
+      "target" : "body_links_params_alt_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.params.type",
+      "target" : "body_links_params_type_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.title",
+      "target" : "body_links_title_ss",
+      "operation" : "move"
+    }, {
+      "source" : "body.links.targetUri",
+      "target" : "body_links_targetUri_ss",
+      "operation" : "move"
+    }, {
+      "source" : "Brightness Value",
+      "target" : "Brightness_Value_ss",
+      "operation" : "move"
+    }, {
+      "source" : "/(.*)_[isltbfd]s?/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_txt/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_en/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_dts?/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_t[ilfd]/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_p/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_c/",
+      "operation" : "keep"
+    }, {
+      "source" : "/(.*)_coordinate/",
+      "operation" : "keep"
+    }, {
+      "source" : "/attr_(.*)/",
+      "operation" : "keep"
+    }, {
+      "source" : "/random_(.*)/",
+      "operation" : "keep"
+    }, {
+      "source" : "/ignored_(.*)/",
+      "operation" : "keep"
+    } ],
+    "reservedFieldsMappingAllowed" : false,
+    "type" : "field-mapping",
+    "skip" : false,
+    "label" : "field-mapping"
+  }, {
+    "type" : "solr-index",
+    "id" : "solr-default",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : false,
+    "unmapped" : {
+      "source" : "/(^.*)$/",
+      "target" : "$1_txt",
+      "operation" : "move"
+    },
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "_aggregation_default",
+  "stages" : [ {
+    "type" : "solr-index",
+    "id" : "solr-signals",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : true,
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "Default_Data",
+  "stages" : [ {
+    "type" : "field-mapping",
+    "id" : "empty_field_mapper",
+    "mappings" : [ ],
+    "reservedFieldsMappingAllowed" : false,
+    "type" : "field-mapping",
+    "skip" : false,
+    "label" : "field-mapping"
+  }, {
+    "type" : "solr-index",
+    "id" : "solr-default",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : false,
+    "unmapped" : {
+      "source" : "/(^.*)$/",
+      "target" : "$1_txt",
+      "operation" : "move"
+    },
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "_system_metrics",
+  "stages" : [ {
+    "type" : "solr-index",
+    "id" : "ec8c11d0-6be8-4899-aa9c-735746c84960",
+    "enforceSchema" : true,
+    "dateFormats" : [ ],
+    "params" : [ ],
+    "bufferDocsForSolr" : false,
+    "type" : "solr-index",
+    "skip" : false,
+    "label" : "solr-index"
+  } ],
+  "properties" : { }
+} ]

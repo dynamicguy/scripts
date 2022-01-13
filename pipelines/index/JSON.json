@@ -1,0 +1,44 @@
+{
+  "stages": [
+    {
+      "splitPath": "/", 
+      "sourceField": "_raw_content_", 
+      "skip": false, 
+      "sourceEncoding": "binary", 
+      "label": "json-parser", 
+      "mappingRules": [
+        {
+          "path": "/**"
+        }
+      ], 
+      "inheritFields": false, 
+      "type": "json-parser", 
+      "id": "json_parse_stage_default"
+    }, 
+    {
+      "mappings": [], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "empty_field_mapper"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(^.*)$/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "solr-default", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "JSON", 
+  "properties": {}
+}

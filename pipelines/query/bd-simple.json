@@ -1,0 +1,24 @@
+{
+  "stages": [
+    {
+      "allowedRequestHandlers": [
+        "suggest", 
+        "select", 
+        "spellcheck", 
+        "get", 
+        "terms", 
+        "stats", 
+        "browse", 
+        "query"
+      ], 
+      "skip": false, 
+      "label": "solr-query", 
+      "httpMethod": "GET", 
+      "allowFederatedSearch": true, 
+      "type": "solr-query", 
+      "id": "twykvtrrtxvrkke29"
+    }
+  ], 
+  "id": "bd-simple", 
+  "properties": {}
+}

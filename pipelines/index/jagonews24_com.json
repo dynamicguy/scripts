@@ -1,0 +1,166 @@
+{
+  "stages": [
+    {
+      "returnXml": true, 
+      "contentField": "_raw_content_", 
+      "excludeContentTypes": [], 
+      "extractHtmlLinks": true, 
+      "includeContentTypes": [], 
+      "extractOtherLinks": false, 
+      "addOriginalContent": false, 
+      "includeImages": false, 
+      "label": "tika-parser", 
+      "flattenCompound": false, 
+      "skip": false, 
+      "keepOriginalStructure": true, 
+      "csvParsing": false, 
+      "contentEncoding": "binary", 
+      "type": "tika-parser", 
+      "id": "9a34a8d3-dc04-44e8-acd6-1db504cd68c7", 
+      "addFailedDocs": false
+    }, 
+    {
+      "keepParent": true, 
+      "mappings": [
+        {
+          "selectRule": "div.content > p", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "description"
+        }, 
+        {
+          "selectRule": "div.content > div > img", 
+          "attribute": "src", 
+          "multivalue": false, 
+          "field": "images"
+        }, 
+        {
+          "selectRule": "div > article.DetailsContent > small:nth-child(5)", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "author"
+        }, 
+        {
+          "selectRule": "div > article.DetailsContent > h1", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "title"
+        }, 
+        {
+          "selectRule": "div > ol > li", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "breadcrumb"
+        }, 
+        {
+          "selectRule": "div > article.DetailsContent > small:nth-child(7)", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "created"
+        }
+      ], 
+      "bodyField": "body", 
+      "label": "html-transform", 
+      "skip": false, 
+      "recordSelector": "body", 
+      "type": "html-transform", 
+      "id": "ea72541e-3ef8-4be1-b1e4-f4cf7a61ac61", 
+      "metadata": [
+        {
+          "field": "type", 
+          "value": "news"
+        }
+      ]
+    }, 
+    {
+      "mappings": [
+        {
+          "source": "/(.*?)lat(itude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }, 
+        {
+          "source": "/(.*?)lon(gitude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "8fcb2829-b437-416b-a355-6cb270315233"
+    }, 
+    {
+      "outputKey": "languages", 
+      "skip": false, 
+      "outputType": "document", 
+      "id": "99b0be51-946f-4250-ba5c-06c65ee587b3", 
+      "source": [
+        "title", 
+        "body"
+      ], 
+      "label": "lang-detect", 
+      "type": "lang-detect", 
+      "documentPostfix": "_lang"
+    }, 
+    {
+      "rules": [
+        {
+          "source": [
+            "description"
+          ], 
+          "entityTypes": [
+            {
+              "entityDefinitions": [
+                "colours.lst"
+              ], 
+              "name": "Color"
+            }
+          ], 
+          "additionalEntities": [], 
+          "target": "color", 
+          "caseSensitive": false
+        }, 
+        {
+          "source": [
+            "description"
+          ], 
+          "entityTypes": [
+            {
+              "entityDefinitions": [
+                "city.lst"
+              ], 
+              "name": "City"
+            }
+          ], 
+          "additionalEntities": [], 
+          "target": "city", 
+          "caseSensitive": false
+        }
+      ], 
+      "skip": false, 
+      "type": "lookup-extractor", 
+      "id": "6r1f9a4i", 
+      "label": "lookup-extractor"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "condition": "doc.hasField('author');", 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(^.*)$/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "3ad414cd-f9be-4e7d-b75a-0a0013a04071", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "jagonews24_com", 
+  "properties": {}
+}

@@ -1,0 +1,32 @@
+{
+  "stages": [
+    {
+      "queryFields": [], 
+      "rows": 10, 
+      "skip": false, 
+      "returnFields": [], 
+      "label": "search-fields", 
+      "start": 0, 
+      "type": "search-fields", 
+      "id": "4047fc5f-0dde-4958-824d-6b62a55637b5"
+    }, 
+    {
+      "skip": false, 
+      "fieldFacets": [], 
+      "type": "facet", 
+      "id": "442294e4-7b71-4b2a-8523-0f77db389d46", 
+      "label": "facet"
+    }, 
+    {
+      "allowedRequestHandlers": [], 
+      "skip": false, 
+      "label": "solr-query", 
+      "httpMethod": "POST", 
+      "allowFederatedSearch": false, 
+      "type": "solr-query", 
+      "id": "9436eb66-8b9c-4bbc-ba32-6964a7db22f3"
+    }
+  ], 
+  "id": "companies-default", 
+  "properties": {}
+}

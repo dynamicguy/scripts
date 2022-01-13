@@ -1,0 +1,32 @@
+{
+  "stages": [
+    {
+      "queryFields": [], 
+      "rows": 10, 
+      "skip": false, 
+      "returnFields": [], 
+      "label": "search-fields", 
+      "start": 0, 
+      "type": "search-fields", 
+      "id": "f3296aad-279c-4330-8fb5-399218ba728d"
+    }, 
+    {
+      "skip": false, 
+      "fieldFacets": [], 
+      "type": "facet", 
+      "id": "2cf1caec-c58b-452a-bd96-cb41a86d8a9b", 
+      "label": "facet"
+    }, 
+    {
+      "allowedRequestHandlers": [], 
+      "skip": false, 
+      "label": "solr-query", 
+      "httpMethod": "POST", 
+      "allowFederatedSearch": false, 
+      "type": "solr-query", 
+      "id": "f1bcb562-6d6c-4fde-a2ae-e38c5a13e662"
+    }
+  ], 
+  "id": "doodles-default", 
+  "properties": {}
+}

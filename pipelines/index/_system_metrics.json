@@ -1,0 +1,16 @@
+{
+  "stages": [
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "skip": false, 
+      "type": "solr-index", 
+      "id": "d48d1f4a-92e9-4d5c-b37c-e73f975a1439", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "_system_metrics", 
+  "properties": {}
+}

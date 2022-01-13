@@ -1,0 +1,27 @@
+{
+  "pipeline": "tweets-default", 
+  "created": "2017-01-01T21:33:22.978Z", 
+  "modified": "2017-01-01T21:33:22.978Z", 
+  "properties": {
+    "lang": "bn", 
+    "access_token": "17420670-0ZQy7MN6Fa44xU690zSwFo8q6ImoG9b2G7huoktq3", 
+    "max_docs": 100, 
+    "collection": "tweets", 
+    "consumer_secret": "xXx-Redacted-xXx", 
+    "initial_mapping": {
+      "mappings": [], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "FromMap"
+    }, 
+    "commit_on_finish": true, 
+    "sleep": 10000, 
+    "consumer_key": "VzCrJ70zJOXE9mCYKH93WLqXt", 
+    "token_secret": "xXx-Redacted-xXx"
+  }, 
+  "connector": "lucid.twitter.search", 
+  "type": "twitter_search", 
+  "id": "twitter-search"
+}

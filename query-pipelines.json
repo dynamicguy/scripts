@@ -1,0 +1,61 @@
+[ {
+  "id" : "default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "3cbed0ba-5e0d-4e58-b000-e54163c6eea8",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "6bbebff9-5e27-4cca-96e9-64317f49a280",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "ef2f43cf-3b50-43b8-a5b4-facbe0fd6fbe",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "bd-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "ee3c7d94-8e38-4779-95f4-b14f66f18d7d",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "acbc208a-34eb-4cde-8a63-be9507b285e9",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "48113223-ae38-4563-8a41-0e16c82ef15c",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+} ]

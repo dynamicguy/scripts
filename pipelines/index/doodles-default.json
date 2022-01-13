@@ -1,0 +1,35 @@
+{
+  "stages": [
+    {
+      "mappings": [
+        {
+          "source": "/(.*?)lat(itude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }, 
+        {
+          "source": "/(.*?)lon(gitude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "mapping-default"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "skip": false, 
+      "type": "solr-index", 
+      "id": "301683ae-f564-4c55-bda8-27b2d91a3d53", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "doodles-default", 
+  "properties": {}
+}

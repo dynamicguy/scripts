@@ -1,0 +1,98 @@
+{
+    "id": "en-sa_namshi_com",
+    "stages": [
+        {
+            "type": "tika-parser",
+            "includeImages": false,
+            "flattenCompound": false,
+            "addFailedDocs": false,
+            "addOriginalContent": false,
+            "contentField": "_raw_content_",
+            "contentEncoding": "binary",
+            "returnXml": true,
+            "keepOriginalStructure": true,
+            "extractHtmlLinks": true,
+            "extractOtherLinks": false,
+            "csvParsing": false,
+            "skip": false,
+            "label": "tika-parser"
+        },
+        {
+            "type": "html-transform",
+            "recordSelector": "body",
+            "bodyField": "body",
+            "mappings": [
+                {
+                    "selectRule": "meta[name=\"keywords\"]",
+                    "attribute": "content",
+                    "field": "keywords",
+                    "multivalue": true
+                },
+                {
+                    "selectRule": "p.price",
+                    "attribute": "text",
+                    "field": "price_s",
+                    "multivalue": false
+                }
+            ],
+            "keepParent": false,
+            "skip": false,
+            "label": "html-transform"
+        },
+        {
+            "type": "field-mapping",
+            "mappings": [
+                {
+                    "source": "/(.*?)lat(itude)?$/",
+                    "target": "$1_lat_lon",
+                    "operation": "move"
+                },
+                {
+                    "source": "/(.*?)lon(gitude)?$/",
+                    "target": "$1_lat_lon",
+                    "operation": "move"
+                }
+            ],
+            "skip": false,
+            "label": "field-mapping"
+        },
+        {
+            "type": "regex-extractor",
+            "rules": [
+                {
+                    "source": [
+                        "price_s"
+                    ],
+                    "target": "price",
+                    "pattern": "",
+                    "annotateAs": "price_long",
+                    "group": 1
+                }
+            ],
+            "skip": false,
+            "label": "regex-extractor"
+        },
+        {
+            "type": "lang-detect",
+            "source": [
+                "body",
+                "title"
+            ],
+            "outputType": "document",
+            "outputKey": "languages",
+            "documentPostfix": "_lang",
+            "skip": false,
+            "label": "lang-detect"
+        },
+        {
+            "type": "solr-index",
+            "enforceSchema": true,
+            "bufferDocsForSolr": false,
+            "skip": false,
+            "label": "solr-index",
+            "condition": "doc.hasField(\"images\");"
+        }
+    ]
+}
+
+//((?:\d*\.)?\d+)\s(SAR|sar)

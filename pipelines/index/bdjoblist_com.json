@@ -1,0 +1,120 @@
+{
+  "stages": [
+    {
+      "returnXml": true, 
+      "contentField": "_raw_content_", 
+      "excludeContentTypes": [], 
+      "extractHtmlLinks": true, 
+      "includeContentTypes": [], 
+      "extractOtherLinks": false, 
+      "addOriginalContent": false, 
+      "includeImages": false, 
+      "label": "tika-parser", 
+      "flattenCompound": false, 
+      "skip": false, 
+      "keepOriginalStructure": true, 
+      "csvParsing": false, 
+      "contentEncoding": "binary", 
+      "type": "tika-parser", 
+      "id": "0c117aee-863f-4f35-a802-185c630dd9fd", 
+      "addFailedDocs": false
+    }, 
+    {
+      "keepParent": true, 
+      "mappings": [
+        {
+          "selectRule": "div > main > article > div > p", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "description"
+        }, 
+        {
+          "selectRule": "div > main > div.breadcrumb", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "breadcrumb"
+        }, 
+        {
+          "selectRule": "div > main > article > header > p > time.entry-time", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "created"
+        }, 
+        {
+          "selectRule": "div > main > article > header > h1.entry-title", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "title"
+        }, 
+        {
+          "selectRule": "div > main > article > div > h4 > strong > img", 
+          "attribute": "src", 
+          "multivalue": true, 
+          "field": "images"
+        }
+      ], 
+      "bodyField": "body", 
+      "label": "html-transform", 
+      "skip": false, 
+      "recordSelector": "body", 
+      "type": "html-transform", 
+      "id": "fdd0fb55-44c2-4089-9881-9b701331743a", 
+      "metadata": [
+        {
+          "field": "type", 
+          "value": "jobs"
+        }
+      ]
+    }, 
+    {
+      "mappings": [
+        {
+          "source": "/(.*?)lat(itude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }, 
+        {
+          "source": "/(.*?)lon(gitude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "0092adc4-b647-4736-8ccd-85fd33703e4b"
+    }, 
+    {
+      "outputKey": "languages", 
+      "skip": false, 
+      "outputType": "document", 
+      "id": "02249e7a-b741-4dc9-82ee-7f6aad3f512e", 
+      "source": [
+        "title", 
+        "body"
+      ], 
+      "label": "lang-detect", 
+      "type": "lang-detect", 
+      "documentPostfix": "_lang"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "condition": "doc.hasField(\"title\");", 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(^.*)$/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "79e8dc93-9e30-4740-ba6f-283ce006886f", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "bdjoblist_com", 
+  "properties": {}
+}

@@ -1,0 +1,29 @@
+{
+  "stages": [
+    {
+      "mappings": [], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "empty_field_mapper"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(^.*)$/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "solr-default", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "Default_Data", 
+  "properties": {}
+}

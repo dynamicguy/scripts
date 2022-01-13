@@ -1,0 +1,35 @@
+{
+  "stages": [
+    {
+      "mappings": [
+        {
+          "source": "/(.*?)lat(itude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }, 
+        {
+          "source": "/(.*?)lon(gitude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "mapping-default"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "skip": false, 
+      "type": "solr-index", 
+      "id": "5b765b62-d32a-4ce2-9075-b427d3b056a1", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "manufacturers-default", 
+  "properties": {}
+}

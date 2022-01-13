@@ -1,0 +1,470 @@
+{
+  "stages": [
+    {
+      "returnXml": false, 
+      "contentField": "_raw_content_", 
+      "excludeContentTypes": [], 
+      "extractHtmlLinks": true, 
+      "includeContentTypes": [], 
+      "extractOtherLinks": false, 
+      "addOriginalContent": false, 
+      "includeImages": true, 
+      "label": "tika-parser", 
+      "flattenCompound": false, 
+      "skip": false, 
+      "keepOriginalStructure": false, 
+      "csvParsing": false, 
+      "contentEncoding": "binary", 
+      "type": "tika-parser", 
+      "id": "tika_content_csv_disabled_stage", 
+      "addFailedDocs": true
+    }, 
+    {
+      "keepParent": true, 
+      "mappings": [
+        {
+          "selectRule": "div.app-content > div > div.ui-panel.is-rounded.item-detail > div.ui-panel-content.ui-panel-block > div:nth-child(2) > div.col-12.lg-8.item-body > div:nth-child(2) > div.col-12.lg-4 > div.item-properties > dl > dd", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "features"
+        }, 
+        {
+          "selectRule": "div.app-content > div > div.ui-panel.is-rounded.item-detail > div.ui-panel-content.ui-panel-block > div:nth-child(2) > div.col-12.lg-8.item-body > div:nth-child(2) > div.col-12.lg-4 > div.item-properties > dl:nth-child(3) > dd", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "keywords"
+        }, 
+        {
+          "selectRule": "a.item-poster span", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "author"
+        }, 
+        {
+          "selectRule": "div.app-content > div > nav", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "breadcrumb"
+        }, 
+        {
+          "selectRule": "div.col-12.lg-4 > div.item-properties", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "details"
+        }, 
+        {
+          "selectRule": "div#phones > div > ul > li > span", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "phone"
+        }, 
+        {
+          "selectRule": "div.item-description p", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "description"
+        }, 
+        {
+          "selectRule": "div.item-price > div", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "price_s"
+        }, 
+        {
+          "selectRule": "div.item-top.col-12.lg-8 > p > span.location", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "location"
+        }, 
+        {
+          "selectRule": "div.item-top.col-12.lg-8 > p > span.date", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "last_modified"
+        }, 
+        {
+          "selectRule": "div.gallery-item > div > img", 
+          "attribute": "srcset", 
+          "multivalue": false, 
+          "field": "images"
+        }, 
+        {
+          "selectRule": "h1.h2", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "title"
+        }
+      ], 
+      "bodyField": "body", 
+      "label": "html-transform", 
+      "skip": false, 
+      "recordSelector": "div.ui-panel-content.ui-panel-block", 
+      "type": "html-transform", 
+      "id": "c1d1nyeyhpxgh9f6r", 
+      "metadata": [
+        {
+          "field": "type", 
+          "value": "shopping"
+        }
+      ]
+    }, 
+    {
+      "mappings": [
+        {
+          "source": "Content-Encoding", 
+          "operation": "move", 
+          "target": "contentEncoding_s"
+        }, 
+        {
+          "source": "Character-Set", 
+          "operation": "move", 
+          "target": "characterSet_s"
+        }, 
+        {
+          "source": "Content-Length", 
+          "operation": "move", 
+          "target": "contentLength_l"
+        }, 
+        {
+          "source": "FileSize", 
+          "operation": "move", 
+          "target": "fileSize_l"
+        }, 
+        {
+          "source": "FileName", 
+          "operation": "move", 
+          "target": "fileName_s"
+        }, 
+        {
+          "source": "Content-Type", 
+          "operation": "move", 
+          "target": "mimeType_s"
+        }, 
+        {
+          "source": "MimeType", 
+          "operation": "move", 
+          "target": "mimeType_s"
+        }, 
+        {
+          "source": "Title", 
+          "operation": "move", 
+          "target": "title"
+        }, 
+        {
+          "source": "Description", 
+          "operation": "move", 
+          "target": "description"
+        }, 
+        {
+          "source": "Subject", 
+          "operation": "move", 
+          "target": "subject"
+        }, 
+        {
+          "source": "created", 
+          "operation": "move", 
+          "target": "dateCreated_dt"
+        }, 
+        {
+          "source": "ContentCreated", 
+          "operation": "move", 
+          "target": "dateCreated_dt"
+        }, 
+        {
+          "source": "meta:creation_date", 
+          "operation": "move", 
+          "target": "dateCreated_dt"
+        }, 
+        {
+          "source": "Creation-Date", 
+          "operation": "move", 
+          "target": "dateCreated_dt"
+        }, 
+        {
+          "source": "date", 
+          "operation": "move", 
+          "target": "dateCreated_dt"
+        }, 
+        {
+          "source": "Author", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "meta:author", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "Contributor", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "LastModifiedBy", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "Last-Author", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "fullname", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "meta:last-author", 
+          "operation": "move", 
+          "target": "author"
+        }, 
+        {
+          "source": "Last-Modified", 
+          "operation": "move", 
+          "target": "last_modified"
+        }, 
+        {
+          "source": "fileLastModified", 
+          "operation": "move", 
+          "target": "last_modified"
+        }, 
+        {
+          "source": "ContentLastModified", 
+          "operation": "move", 
+          "target": "last_modified"
+        }, 
+        {
+          "source": "Last-Save-Date", 
+          "operation": "move", 
+          "target": "last_modified"
+        }, 
+        {
+          "source": "fullText", 
+          "operation": "move", 
+          "target": "content_txt"
+        }, 
+        {
+          "source": "plainTextContent", 
+          "operation": "move", 
+          "target": "content_txt"
+        }, 
+        {
+          "source": "plainTextMessageContent", 
+          "operation": "move", 
+          "target": "content_txt"
+        }, 
+        {
+          "source": "body", 
+          "operation": "move", 
+          "target": "content_txt"
+        }, 
+        {
+          "source": "content", 
+          "operation": "move", 
+          "target": "content_txt"
+        }, 
+        {
+          "source": "keyword", 
+          "operation": "move", 
+          "target": "keywords"
+        }, 
+        {
+          "source": "Keywords", 
+          "operation": "move", 
+          "target": "keywords"
+        }, 
+        {
+          "source": "messageSubject", 
+          "operation": "move", 
+          "target": "title"
+        }, 
+        {
+          "source": "name", 
+          "operation": "move", 
+          "target": "title"
+        }, 
+        {
+          "source": "Page-Count", 
+          "operation": "move", 
+          "target": "pageCount_i"
+        }, 
+        {
+          "source": "PageCount", 
+          "operation": "move", 
+          "target": "pageCount_i"
+        }, 
+        {
+          "source": "Slide-Count", 
+          "operation": "move", 
+          "target": "pageCount_i"
+        }, 
+        {
+          "source": "Slides", 
+          "operation": "move", 
+          "target": "pageCount_i"
+        }, 
+        {
+          "source": "xmpTPg:NPages", 
+          "operation": "move", 
+          "target": "pageCount_i"
+        }, 
+        {
+          "source": "parsing_time", 
+          "operation": "move", 
+          "target": "parsing_time_l"
+        }, 
+        {
+          "source": "parsing", 
+          "operation": "move", 
+          "target": "parsing_s"
+        }, 
+        {
+          "source": "Comments", 
+          "operation": "move", 
+          "target": "comments"
+        }, 
+        {
+          "source": "resourceName", 
+          "operation": "move", 
+          "target": "resourcename_s"
+        }, 
+        {
+          "source": "resource_name", 
+          "operation": "move", 
+          "target": "resourcename_s"
+        }, 
+        {
+          "source": "Content-Location", 
+          "operation": "move", 
+          "target": "url"
+        }, 
+        {
+          "source": "meta:character-count", 
+          "operation": "move", 
+          "target": "character-count_i"
+        }, 
+        {
+          "source": "Word-Count", 
+          "operation": "move", 
+          "target": "wordCount_i"
+        }, 
+        {
+          "source": "type", 
+          "operation": "move", 
+          "target": "type_s"
+        }, 
+        {
+          "source": "X-Parsed-By", 
+          "operation": "move", 
+          "target": "xParsedBy_ss"
+        }, 
+        {
+          "source": "body.links.anchor", 
+          "operation": "move", 
+          "target": "body_links_anchor_ss"
+        }, 
+        {
+          "source": "body.links.params.alt", 
+          "operation": "move", 
+          "target": "body_links_params_alt_ss"
+        }, 
+        {
+          "source": "body.links.params.type", 
+          "operation": "move", 
+          "target": "body_links_params_type_ss"
+        }, 
+        {
+          "source": "body.links.title", 
+          "operation": "move", 
+          "target": "body_links_title_ss"
+        }, 
+        {
+          "source": "body.links.targetUri", 
+          "operation": "move", 
+          "target": "body_links_targetUri_ss"
+        }, 
+        {
+          "source": "/(.*)_[isltbfd]s?/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_txt/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_en/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_dts?/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_t[ilfd]/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_p/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_c/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/(.*)_coordinate/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/attr_(.*)/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/random_(.*)/", 
+          "operation": "keep"
+        }, 
+        {
+          "source": "/ignored_(.*)/", 
+          "operation": "keep"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "Dynamic_fields"
+    }, 
+    {
+      "outputKey": "languages", 
+      "skip": false, 
+      "outputType": "document", 
+      "id": "conn_language_detection", 
+      "source": [
+        "title"
+      ], 
+      "label": "lang-detect", 
+      "type": "lang-detect", 
+      "documentPostfix": "_lang"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "condition": "doc.hasField('title');", 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(^.*)$/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "solr-default", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "bikroy_com", 
+  "properties": {}
+}

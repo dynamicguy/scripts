@@ -1,0 +1,50 @@
+{
+  "stages": [
+    {
+      "comment": "#", 
+      "emptyValue": "<EMPTY>", 
+      "lineSeparator": "\\n", 
+      "quoteEscape": "\"", 
+      "sourceField": "_raw_content_", 
+      "quote": "\"", 
+      "skipEmptyLines": true, 
+      "sourceEncoding": "binary", 
+      "label": "csv-parser", 
+      "headers": [], 
+      "delimiter": ",", 
+      "skip": false, 
+      "ignoreTrailingWhitespaces": false, 
+      "headersHandling": "parse", 
+      "inheritFields": false, 
+      "type": "csv-parser", 
+      "id": "csv_parse_stage_default", 
+      "ignoreLeadingWhitespaces": false, 
+      "nullValue": "<NULL>"
+    }, 
+    {
+      "mappings": [], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "empty_field_mapper"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(^.*)$/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "solr-default", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "CSV", 
+  "properties": {}
+}

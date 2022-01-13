@@ -1,0 +1,265 @@
+{
+  "pipeline": "tweets-default", 
+  "created": "2015-02-27T23:53:48.263Z", 
+  "modified": "2015-02-27T23:53:48.263Z", 
+  "properties": {
+    "access_token": "17420670-0ZQy7MN6Fa44xU690zSwFo8q6ImoG9b2G7huoktq3", 
+    "max_docs": -1, 
+    "collection": "tweets", 
+    "consumer_secret": "xXx-Redacted-xXx", 
+    "url": "https://stream.twitter.com", 
+    "filter_locations": [
+      "87.8,20.5,92.9,26.8"
+    ], 
+    "initial_mapping": {
+      "mappings": [
+        {
+          "source": "inReplyToScreenName", 
+          "operation": "move", 
+          "target": "in_reply_to_screen_name"
+        }, 
+        {
+          "source": "Content-Encoding", 
+          "operation": "move", 
+          "target": "charSet"
+        }, 
+        {
+          "source": "Content-Type", 
+          "operation": "move", 
+          "target": "content_type"
+        }, 
+        {
+          "source": "source", 
+          "operation": "move", 
+          "target": "source"
+        }, 
+        {
+          "source": "createdAt", 
+          "operation": "move", 
+          "target": "created_date"
+        }, 
+        {
+          "source": "userName", 
+          "operation": "move", 
+          "target": "user_name"
+        }, 
+        {
+          "source": "userLang", 
+          "operation": "move", 
+          "target": "user_lang"
+        }, 
+        {
+          "source": "retweetCount", 
+          "operation": "move", 
+          "target": "retweet_count"
+        }, 
+        {
+          "source": "userId", 
+          "operation": "move", 
+          "target": "user_id"
+        }, 
+        {
+          "source": "content_length", 
+          "operation": "move", 
+          "target": "content_length"
+        }, 
+        {
+          "source": "userLocation", 
+          "operation": "move", 
+          "target": "user_location"
+        }, 
+        {
+          "source": "location", 
+          "operation": "move", 
+          "target": "location"
+        }, 
+        {
+          "source": "userScreenName", 
+          "operation": "move", 
+          "target": "user_screen_name"
+        }, 
+        {
+          "source": "isRetweet", 
+          "operation": "move", 
+          "target": "is_retweet"
+        }, 
+        {
+          "source": "isRetweetedByMe", 
+          "operation": "move", 
+          "target": "is_retweet_by_me"
+        }, 
+        {
+          "source": "isFavorited", 
+          "operation": "move", 
+          "target": "is_favorited"
+        }, 
+        {
+          "source": "isPossiblySensitive", 
+          "operation": "move", 
+          "target": "is_possibly_sensitive"
+        }, 
+        {
+          "source": "isTruncated", 
+          "operation": "move", 
+          "target": "is_truncated"
+        }, 
+        {
+          "source": "inReplyToStatusId", 
+          "operation": "move", 
+          "target": "in_reply_to_status_id"
+        }, 
+        {
+          "source": "inReplyToScreenName", 
+          "operation": "move", 
+          "target": "in_reply_to_screen_name"
+        }, 
+        {
+          "source": "inReplyToUserId", 
+          "operation": "move", 
+          "target": "in_reply_to_user_id"
+        }, 
+        {
+          "source": "contributor", 
+          "operation": "move", 
+          "target": "contributor"
+        }, 
+        {
+          "source": "placeFullName", 
+          "operation": "move", 
+          "target": "place_full_name"
+        }, 
+        {
+          "source": "placeCountry", 
+          "operation": "move", 
+          "target": "place_country"
+        }, 
+        {
+          "source": "placeAddress", 
+          "operation": "move", 
+          "target": "place_address"
+        }, 
+        {
+          "source": "placeType", 
+          "operation": "move", 
+          "target": "place_type"
+        }, 
+        {
+          "source": "placeURL", 
+          "operation": "move", 
+          "target": "place_url"
+        }, 
+        {
+          "source": "placeId", 
+          "operation": "move", 
+          "target": "place_id"
+        }, 
+        {
+          "source": "placeName", 
+          "operation": "move", 
+          "target": "place_name"
+        }, 
+        {
+          "source": "userMentionName", 
+          "operation": "move", 
+          "target": "user_mention_name"
+        }, 
+        {
+          "source": "userMentionScreenName", 
+          "operation": "copy", 
+          "target": "user_mention_screen_name"
+        }, 
+        {
+          "source": "userMentionScreenName", 
+          "operation": "move", 
+          "target": "user_mention_screen_name"
+        }, 
+        {
+          "source": "userMentionStart", 
+          "operation": "move", 
+          "target": "user_mention_start"
+        }, 
+        {
+          "source": "userMentionEnd", 
+          "operation": "move", 
+          "target": "user_mention_end"
+        }, 
+        {
+          "source": "urlExpanded", 
+          "operation": "move", 
+          "target": "url_expanded"
+        }, 
+        {
+          "source": "urlDisplay", 
+          "operation": "move", 
+          "target": "url_display"
+        }, 
+        {
+          "source": "url", 
+          "operation": "move", 
+          "target": "url"
+        }, 
+        {
+          "source": "tags", 
+          "operation": "copy", 
+          "target": "keywords"
+        }, 
+        {
+          "source": "tags", 
+          "operation": "move", 
+          "target": "tags"
+        }, 
+        {
+          "source": "tagText", 
+          "operation": "move", 
+          "target": "tags_text"
+        }, 
+        {
+          "source": "tagStart", 
+          "operation": "move", 
+          "target": "tag_start"
+        }, 
+        {
+          "source": "tagEnd", 
+          "operation": "move", 
+          "target": "tag_end"
+        }, 
+        {
+          "source": "mediaId", 
+          "operation": "move", 
+          "target": "media_id"
+        }, 
+        {
+          "source": "mediaUrl", 
+          "operation": "move", 
+          "target": "media_url"
+        }, 
+        {
+          "source": "tweet", 
+          "operation": "move", 
+          "target": "tweet"
+        }, 
+        {
+          "source": "_raw_content_", 
+          "operation": "delete"
+        }, 
+        {
+          "source": "document_fetching_time", 
+          "operation": "move", 
+          "target": "document_fetching_time"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "FromMap"
+    }, 
+    "commit_on_finish": true, 
+    "sleep": 10000, 
+    "consumer_key": "VzCrJ70zJOXE9mCYKH93WLqXt", 
+    "token_secret": "xXx-Redacted-xXx"
+  }, 
+  "connector": "lucid.twitter.stream", 
+  "type": "twitter_stream", 
+  "id": "twitter-stream"
+}

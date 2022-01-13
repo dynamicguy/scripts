@@ -1,0 +1,100 @@
+{
+  "stages": [
+    {
+      "timestampLocale": "en-US", 
+      "allowedTypes": [], 
+      "undefinedType": "general", 
+      "label": "signal-formatter", 
+      "flatten": true, 
+      "skip": false, 
+      "type": "signal-formatter", 
+      "id": "ingest-signals"
+    }, 
+    {
+      "mappings": [
+        {
+          "source": "type", 
+          "operation": "move", 
+          "target": "type_s"
+        }, 
+        {
+          "source": "flag", 
+          "operation": "move", 
+          "target": "flag_s"
+        }, 
+        {
+          "source": "params.flag", 
+          "operation": "move", 
+          "target": "flag_s"
+        }, 
+        {
+          "source": "timestamp", 
+          "operation": "move", 
+          "target": "timestamp_tdt"
+        }, 
+        {
+          "source": "params.count", 
+          "operation": "move", 
+          "target": "count_i"
+        }, 
+        {
+          "source": "params.weight", 
+          "operation": "move", 
+          "target": "weight_d"
+        }, 
+        {
+          "source": "params.query", 
+          "operation": "copy", 
+          "target": "query_s"
+        }, 
+        {
+          "source": "params.query", 
+          "operation": "move", 
+          "target": "query_t"
+        }, 
+        {
+          "source": "params.docId", 
+          "operation": "move", 
+          "target": "doc_id_s"
+        }, 
+        {
+          "source": "params.userId", 
+          "operation": "move", 
+          "target": "user_id_s"
+        }, 
+        {
+          "source": "params.sessionId", 
+          "operation": "move", 
+          "target": "session_id_s"
+        }, 
+        {
+          "source": "params.filterQueries", 
+          "operation": "move", 
+          "target": "filters_s"
+        }, 
+        {
+          "source": "/params\\.(.*)(?<!_.{1,2})$/", 
+          "operation": "move", 
+          "target": "params.$1_s"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "mapping-signals"
+    }, 
+    {
+      "bufferDocsForSolr": true, 
+      "label": "solr-index", 
+      "params": [], 
+      "skip": false, 
+      "type": "solr-index", 
+      "id": "solr-signals", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "_signals_ingest", 
+  "properties": {}
+}

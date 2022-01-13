@@ -1,0 +1,103 @@
+{
+  "stages": [
+    {
+      "returnXml": true, 
+      "contentField": "_raw_content_", 
+      "excludeContentTypes": [], 
+      "extractHtmlLinks": true, 
+      "includeContentTypes": [], 
+      "extractOtherLinks": false, 
+      "addOriginalContent": false, 
+      "includeImages": false, 
+      "label": "tika-parser", 
+      "flattenCompound": false, 
+      "skip": false, 
+      "keepOriginalStructure": true, 
+      "csvParsing": false, 
+      "contentEncoding": "binary", 
+      "type": "tika-parser", 
+      "id": "de9a1a0c-8183-4975-b6f6-a0be64174b38", 
+      "addFailedDocs": false
+    }, 
+    {
+      "keepParent": true, 
+      "mappings": [
+        {
+          "selectRule": "div.content > div > div > div > p", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "description"
+        }, 
+        {
+          "selectRule": "div.flexslider > ul.slides > li > img", 
+          "attribute": "src", 
+          "multivalue": true, 
+          "field": "images"
+        }, 
+        {
+          "selectRule": "div > div > div > h1.title", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "title"
+        }
+      ], 
+      "bodyField": "body", 
+      "label": "html-transform", 
+      "skip": false, 
+      "recordSelector": "body", 
+      "type": "html-transform", 
+      "id": "d7c3999f-63ae-4d23-93b3-d9e9203c3acc", 
+      "metadata": [
+        {
+          "field": "type", 
+          "value": "government"
+        }
+      ]
+    }, 
+    {
+      "mappings": [
+        {
+          "source": "/(.*?)lat(itude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }, 
+        {
+          "source": "/(.*?)lon(gitude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "72bd74c3-ffcb-4356-a2fa-224aa18e7c73"
+    }, 
+    {
+      "outputKey": "languages", 
+      "skip": false, 
+      "outputType": "document", 
+      "id": "20e65f8a-9b89-41e0-bbda-5d3f531bc390", 
+      "source": [
+        "title", 
+        "body"
+      ], 
+      "label": "lang-detect", 
+      "type": "lang-detect", 
+      "documentPostfix": "_lang"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "condition": "doc.hasField(\"title\");", 
+      "skip": false, 
+      "type": "solr-index", 
+      "id": "bb64e462-6c51-464b-ade6-90e8e5203404", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "a2i_pmo_gov_bd", 
+  "properties": {}
+}

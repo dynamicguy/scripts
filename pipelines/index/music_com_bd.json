@@ -1,0 +1,108 @@
+{
+  "stages": [
+    {
+      "returnXml": true, 
+      "contentField": "_raw_content_", 
+      "excludeContentTypes": [], 
+      "extractHtmlLinks": true, 
+      "includeContentTypes": [], 
+      "extractOtherLinks": false, 
+      "addOriginalContent": false, 
+      "includeImages": false, 
+      "label": "tika-parser", 
+      "flattenCompound": false, 
+      "skip": false, 
+      "keepOriginalStructure": true, 
+      "csvParsing": false, 
+      "contentEncoding": "binary", 
+      "type": "tika-parser", 
+      "id": "fb1a2854-aa81-4389-9817-af38066c4331", 
+      "addFailedDocs": false
+    }, 
+    {
+      "keepParent": true, 
+      "mappings": [
+        {
+          "selectRule": "div.panel-body > ul > li", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "description"
+        }, 
+        {
+          "selectRule": "div.container > div.panel.panel-default.panel-green > div.panel-heading.panel-heading-green > h3.panel-title", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "title"
+        }, 
+        {
+          "selectRule": "div.container > ol > li > a", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "breadcrumb"
+        }
+      ], 
+      "bodyField": "body", 
+      "label": "html-transform", 
+      "skip": false, 
+      "recordSelector": "body", 
+      "type": "html-transform", 
+      "id": "42ba9d1a-6a1f-4b66-b346-354b10e5ba94", 
+      "metadata": [
+        {
+          "field": "type", 
+          "value": "music"
+        }
+      ]
+    }, 
+    {
+      "mappings": [
+        {
+          "source": "/(.*?)lat(itude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }, 
+        {
+          "source": "/(.*?)lon(gitude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "88534cfa-76d5-40d4-8210-8af2877e7154"
+    }, 
+    {
+      "outputKey": "languages", 
+      "skip": false, 
+      "outputType": "document", 
+      "id": "8e1584be-7d1f-4d0a-b732-20dd215707d5", 
+      "source": [
+        "body", 
+        "title"
+      ], 
+      "label": "lang-detect", 
+      "type": "lang-detect", 
+      "documentPostfix": "_lang"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "condition": "doc.hasField('title');", 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(^.*)$/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "01fe4b7a-504d-419f-830e-1e34f8b18aa1", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "music_com_bd", 
+  "properties": {}
+}

@@ -1,0 +1,126 @@
+{
+  "stages": [
+    {
+      "returnXml": true, 
+      "contentField": "_raw_content_", 
+      "excludeContentTypes": [], 
+      "extractHtmlLinks": true, 
+      "includeContentTypes": [], 
+      "extractOtherLinks": false, 
+      "addOriginalContent": false, 
+      "includeImages": false, 
+      "label": "tika-parser", 
+      "flattenCompound": false, 
+      "skip": false, 
+      "keepOriginalStructure": true, 
+      "csvParsing": false, 
+      "contentEncoding": "binary", 
+      "type": "tika-parser", 
+      "id": "80ad1bbe-7bce-4cbc-96c6-7e6fd9a1cc47", 
+      "addFailedDocs": false
+    }, 
+    {
+      "keepParent": true, 
+      "mappings": [
+        {
+          "selectRule": "div > div.dtl_img_section > img", 
+          "attribute": "src", 
+          "multivalue": false, 
+          "field": "images"
+        }, 
+        {
+          "selectRule": "div.dtl_section > p", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "description"
+        }, 
+        {
+          "selectRule": "div.rpt_info_section > div.rpt_name", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "author"
+        }, 
+        {
+          "selectRule": "div.news_date_time > p", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "created_date"
+        }, 
+        {
+          "selectRule": "div#ntv_breadcrumb > ul > li > a", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "breadcrumb"
+        }, 
+        {
+          "selectRule": "div.headline_section > h1", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "title"
+        }
+      ], 
+      "bodyField": "body", 
+      "label": "html-transform", 
+      "skip": false, 
+      "recordSelector": "body", 
+      "type": "html-transform", 
+      "id": "9fd6e8a8-c155-4cb7-9ae3-751089542244", 
+      "metadata": [
+        {
+          "field": "type", 
+          "value": "news"
+        }
+      ]
+    }, 
+    {
+      "mappings": [
+        {
+          "source": "/(.*?)lat(itude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }, 
+        {
+          "source": "/(.*?)lon(gitude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "236f49e9-98f4-424c-bd07-06c8c217d6f8"
+    }, 
+    {
+      "outputKey": "languages", 
+      "skip": false, 
+      "outputType": "document", 
+      "id": "56215f39-4f33-4b39-8ec0-e96fb284b38a", 
+      "source": [
+        "title", 
+        "body"
+      ], 
+      "label": "lang-detect", 
+      "type": "lang-detect", 
+      "documentPostfix": "_lang"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "condition": "doc.hasField('title');", 
+      "skip": false, 
+      "unmapped": {
+        "source": "/(^.*)$/", 
+        "operation": "move", 
+        "target": "$1_txt"
+      }, 
+      "type": "solr-index", 
+      "id": "17383c50-db62-4ff3-8d59-fb6c2a061900", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "ntvbd_com", 
+  "properties": {}
+}

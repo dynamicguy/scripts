@@ -1,0 +1,97 @@
+{
+  "stages": [
+    {
+      "returnXml": true, 
+      "contentField": "_raw_content_", 
+      "excludeContentTypes": [], 
+      "extractHtmlLinks": true, 
+      "includeContentTypes": [], 
+      "extractOtherLinks": false, 
+      "addOriginalContent": false, 
+      "includeImages": false, 
+      "label": "tika-parser", 
+      "flattenCompound": false, 
+      "skip": false, 
+      "keepOriginalStructure": true, 
+      "csvParsing": false, 
+      "contentEncoding": "binary", 
+      "type": "tika-parser", 
+      "id": "0f8fba2f-cae6-4702-8e8e-aa713e27126e", 
+      "addFailedDocs": false
+    }, 
+    {
+      "keepParent": true, 
+      "mappings": [
+        {
+          "selectRule": "div > div.tender-list > ul > li > div", 
+          "attribute": "text", 
+          "multivalue": true, 
+          "field": "description"
+        }, 
+        {
+          "selectRule": "div#show-list > div > div > h4", 
+          "attribute": "text", 
+          "multivalue": false, 
+          "field": "title"
+        }
+      ], 
+      "bodyField": "body", 
+      "label": "html-transform", 
+      "skip": false, 
+      "recordSelector": "body", 
+      "type": "html-transform", 
+      "id": "7bbb4d72-d314-4b04-972a-2602195fd9e2", 
+      "metadata": [
+        {
+          "field": "type", 
+          "value": "tender"
+        }
+      ]
+    }, 
+    {
+      "mappings": [
+        {
+          "source": "/(.*?)lat(itude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }, 
+        {
+          "source": "/(.*?)lon(gitude)?$/", 
+          "operation": "move", 
+          "target": "$1_lat_lon"
+        }
+      ], 
+      "skip": false, 
+      "label": "field-mapping", 
+      "reservedFieldsMappingAllowed": false, 
+      "type": "field-mapping", 
+      "id": "0923f6e9-bc01-48ed-8345-d900e115b99b"
+    }, 
+    {
+      "outputKey": "languages", 
+      "skip": false, 
+      "outputType": "document", 
+      "id": "50803541-032f-491f-99c4-21557b387fc6", 
+      "source": [
+        "title", 
+        "body"
+      ], 
+      "label": "lang-detect", 
+      "type": "lang-detect", 
+      "documentPostfix": "_lang"
+    }, 
+    {
+      "bufferDocsForSolr": false, 
+      "label": "solr-index", 
+      "params": [], 
+      "condition": "doc.hasField(\"title\");", 
+      "skip": false, 
+      "type": "solr-index", 
+      "id": "4d807e1f-ff3f-4668-a3c5-cdf8c8babd56", 
+      "enforceSchema": true, 
+      "dateFormats": []
+    }
+  ], 
+  "id": "alltender_com", 
+  "properties": {}
+}

@@ -1,0 +1,342 @@
+{
+  "stages": [
+    {
+      "queryParam": "q", 
+      "rules": [
+        {
+          "field": "id", 
+          "blocks": [
+            "http://banglanews24.com/banglanewsprint/13851#0"
+          ], 
+          "mode": "exact", 
+          "keyword": "khujun"
+        }
+      ], 
+      "skip": false, 
+      "label": "RelevancyWorkbench-blocks", 
+      "type": "blocks", 
+      "id": "5a906781-9361-4d57-8b01-a6465ea5bfb3"
+    }, 
+    {
+      "queryParam": "q", 
+      "rules": [
+        {
+          "field": "id", 
+          "boosts": [
+            {
+              "boost": 1.1082711219787598, 
+              "value": "http://bangladesh.shafaqna.com/BD/BD/1352575#0"
+            }
+          ], 
+          "mode": "exact", 
+          "keyword": "khujun"
+        }
+      ], 
+      "skip": false, 
+      "label": "RelevancyWorkbench-boosts", 
+      "type": "boosts", 
+      "id": "99f0a296-d708-404a-a42c-7eeb04ee514d"
+    }, 
+    {
+      "skip": false, 
+      "type": "return-queryparams", 
+      "id": "ek84obt9", 
+      "label": "return-queryparams"
+    }, 
+    {
+      "skip": false, 
+      "label": "MatchAllRanker", 
+      "params": [
+        {
+          "policy": "append", 
+          "value": "last_modified desc", 
+          "key": "sort"
+        }, 
+        {
+          "policy": "default", 
+          "value": "id,title,url,location,type,details,description,features,price_s,price,images,keywords,title_lang,color,og_site_name,city,parent_s,length_l,author,breadcrumb,last_modified,fetchedDate_dt,score", 
+          "key": "fl"
+        }
+      ], 
+      "type": "set-params", 
+      "id": "ov5lbjp6tcbf8yqfr", 
+      "condition": ""
+    }, 
+    {
+      "sort": "", 
+      "queryFields": [], 
+      "rows": 10, 
+      "skip": false, 
+      "minimumMatch": "5%", 
+      "returnFields": [], 
+      "label": "search-fields", 
+      "start": 0, 
+      "type": "search-fields", 
+      "id": "e6ei2j4i"
+    }, 
+    {
+      "params": [
+        {
+          "policy": "append", 
+          "value": "2<75%", 
+          "key": "mm"
+        }, 
+        {
+          "policy": "append", 
+          "value": "true", 
+          "key": "mm.autoRelax"
+        }, 
+        {
+          "policy": "append", 
+          "value": "2", 
+          "key": "ps"
+        }, 
+        {
+          "policy": "append", 
+          "value": "3", 
+          "key": "qs"
+        }, 
+        {
+          "policy": "append", 
+          "value": "last_modified:[NOW/DAY-1YEAR TO NOW/DAY+1YEAR]", 
+          "key": "bq"
+        }, 
+        {
+          "policy": "append", 
+          "value": "title ^10 url ^10 description ^10 details ^9 _text_ ^5", 
+          "key": "pf"
+        }
+      ], 
+      "label": "Search Settings", 
+      "type": "set-params", 
+      "id": "sl9m37u7xs2j5x9a4i", 
+      "skip": false
+    }, 
+    {
+      "rollupKeys": [], 
+      "collection": "bd_signals", 
+      "method": "GET", 
+      "headers": [], 
+      "handler": "select", 
+      "params": [
+        {
+          "value": "_query_:\"{!dismax qf='user_id_s' v=$user_id}\"", 
+          "key": "q"
+        }, 
+        {
+          "value": "doc_id_s", 
+          "key": "fl"
+        }
+      ], 
+      "key": "subquery-results", 
+      "skip": false, 
+      "label": "sub-query", 
+      "type": "sub-query", 
+      "id": "4913c415-6411-4fc7-92e2-3bbc0ccbaf68", 
+      "parentParams": [
+        "user_id"
+      ]
+    }, 
+    {
+      "sort": true, 
+      "maxRows": 100, 
+      "weightFunction": "sum", 
+      "resultKey": "rollup", 
+      "label": "rollup-rec-aggr", 
+      "rollupField": "doc_id_s", 
+      "key": "subquery-results", 
+      "skip": false, 
+      "type": "rollup-rec-aggr", 
+      "id": "f5ec4a6f-9988-4661-9e59-f6bc892e6692"
+    }, 
+    {
+      "rollupKeys": [
+        "rollup"
+      ], 
+      "collection": "bd_signals_aggr", 
+      "method": "GET", 
+      "headers": [], 
+      "handler": "select", 
+      "params": [
+        {
+          "value": "_query_:\"{!dismax qf=doc_id_ss v=$rollup}\"", 
+          "key": "q"
+        }, 
+        {
+          "value": "aggr_type_s:simple@user_id_s", 
+          "key": "fq"
+        }, 
+        {
+          "value": "recip(doc_id_count_i,1,1000,1000)", 
+          "key": "bq"
+        }, 
+        {
+          "value": "100", 
+          "key": "rows"
+        }, 
+        {
+          "value": "doc_id_ss,score", 
+          "key": "fl"
+        }, 
+        {
+          "value": "doc_id_count_i:[2 TO *]", 
+          "key": "fq"
+        }
+      ], 
+      "key": "second-results", 
+      "skip": false, 
+      "label": "sub-query", 
+      "type": "sub-query", 
+      "id": "30fac3e2-22d4-472e-9e0b-4f1ec6cfb1c5", 
+      "parentParams": []
+    }, 
+    {
+      "sort": true, 
+      "maxRows": 20, 
+      "weightFunction": "sum", 
+      "resultKey": "second-rollup", 
+      "label": "rollup-rec-aggr", 
+      "excludeResultsKey": "rollup", 
+      "rollupField": "doc_id_ss", 
+      "key": "second-results", 
+      "skip": false, 
+      "type": "rollup-rec-aggr", 
+      "id": "30ab87d0-0410-4f53-b8b6-c84f736bd2a1", 
+      "weightField": "score"
+    }, 
+    {
+      "boostingParam": "boost", 
+      "boostingMethod": "query-param", 
+      "type": "adv-boost", 
+      "scaleRange": {
+        "scaleMin": 1.0, 
+        "scaleMax": 100.0
+      }, 
+      "key": "second-rollup", 
+      "skip": false, 
+      "label": "adv-boost", 
+      "boostFieldName": "doc_id_s", 
+      "id": "4ee4d7ac-0508-409f-af33-83b3a4cc371f"
+    }, 
+    {
+      "skip": false, 
+      "fieldFacets": [
+        {
+          "minCount": 10, 
+          "missing": false, 
+          "field": "title_lang", 
+          "threads": 4, 
+          "enumCacheMinDf": 120, 
+          "limit": 2
+        }, 
+        {
+          "minCount": 10, 
+          "missing": false, 
+          "field": "type", 
+          "threads": 4, 
+          "enumCacheMinDf": 120, 
+          "limit": 5
+        }, 
+        {
+          "minCount": 10, 
+          "missing": false, 
+          "field": "color", 
+          "threads": 4, 
+          "enumCacheMinDf": 120, 
+          "limit": 5
+        }, 
+        {
+          "minCount": 10, 
+          "missing": false, 
+          "field": "city", 
+          "threads": 4, 
+          "enumCacheMinDf": 120, 
+          "limit": 5
+        }, 
+        {
+          "minCount": 10, 
+          "missing": false, 
+          "field": "keywords", 
+          "threads": 4, 
+          "enumCacheMinDf": 120, 
+          "limit": 5
+        }
+      ], 
+      "type": "facet", 
+      "id": "86eef67e-5dd8-4e40-9df9-f6eb9eb369d4", 
+      "label": "facet"
+    }, 
+    {
+      "params": [
+        {
+          "policy": "append", 
+          "value": "last_modified", 
+          "key": "facet.range"
+        }, 
+        {
+          "policy": "append", 
+          "value": "NOW/DAY-1YEAR", 
+          "key": "facet.range.start"
+        }, 
+        {
+          "policy": "append", 
+          "value": "NOW/DAY+1YEAR", 
+          "key": "facet.range.end"
+        }, 
+        {
+          "policy": "append", 
+          "value": "+1DAY", 
+          "key": "facet.range.gap"
+        }, 
+        {
+          "policy": "append", 
+          "value": "all", 
+          "key": "facet.range.other"
+        }, 
+        {
+          "policy": "append", 
+          "value": "120", 
+          "key": "facet.limit"
+        }, 
+        {
+          "policy": "append", 
+          "value": "10", 
+          "key": "facet.mincount"
+        }
+      ], 
+      "label": "Other Facets", 
+      "type": "set-params", 
+      "id": "e65666f6-0054-4f42-9b45-0492a251d39d", 
+      "skip": false
+    }, 
+    {
+      "params": [
+        {
+          "policy": "default", 
+          "value": "on", 
+          "key": "hl"
+        }, 
+        {
+          "policy": "default", 
+          "value": "title,description,details,images,keywords,title_lang,color,city,brand,url", 
+          "key": "hl.fl"
+        }
+      ], 
+      "label": "Highlighting", 
+      "type": "set-params", 
+      "id": "tovo0f6r", 
+      "skip": false
+    }, 
+    {
+      "allowedRequestHandlers": [], 
+      "skip": false, 
+      "label": "solr-query", 
+      "httpMethod": "GET", 
+      "allowFederatedSearch": false, 
+      "type": "solr-query", 
+      "id": "f22d3f73-7a0d-4ca3-858b-d87443deaa6e"
+    }
+  ], 
+  "id": "bd-default", 
+  "properties": {}
+}

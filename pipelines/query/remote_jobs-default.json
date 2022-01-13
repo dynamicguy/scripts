@@ -1,0 +1,32 @@
+{
+  "stages": [
+    {
+      "queryFields": [], 
+      "rows": 10, 
+      "skip": false, 
+      "returnFields": [], 
+      "label": "search-fields", 
+      "start": 0, 
+      "type": "search-fields", 
+      "id": "8e4eb925-27d6-452c-9ffe-5bd80c90df9b"
+    }, 
+    {
+      "skip": false, 
+      "fieldFacets": [], 
+      "type": "facet", 
+      "id": "8043c674-8385-49c5-bb4a-6bbe4199e3dc", 
+      "label": "facet"
+    }, 
+    {
+      "allowedRequestHandlers": [], 
+      "skip": false, 
+      "label": "solr-query", 
+      "httpMethod": "POST", 
+      "allowFederatedSearch": false, 
+      "type": "solr-query", 
+      "id": "89ffdfcb-0b8e-4312-aa0a-f9c8b9989774"
+    }
+  ], 
+  "id": "remote_jobs-default", 
+  "properties": {}
+}

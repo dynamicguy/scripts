@@ -1,0 +1,1650 @@
+[ {
+  "id" : "remote_files-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "6bd092d7-d5d5-4cea-94ac-1e395c92b675",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "3f5f9c42-0f6b-47e1-b03f-73bc07aaa869",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "c61897d3-e4f2-40c5-8378-9110fba60eeb",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "doodles-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "7c1e1888-ab60-4301-8819-eb381ba64435",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "ba78dbee-d38c-4f97-b6b8-61eaf8812ccb",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "9e1e4274-c740-451e-9bdd-0064d91eb45c",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "system_silkconfig-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "43d92cee-0f0b-4487-964a-d1b7da0fa6b9",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "eea81966-ba33-4ba7-94a8-3aa597165bcb",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "64dd0edb-a300-4725-ab5a-95c7393e2457",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "companies-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "7568452b-621a-4507-b7bc-957f4d7e256a",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "25835191-4220-4939-9930-3244c9e41b62",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "73e2d59d-9269-46f1-a706-8cb189d82e32",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "manufacturers-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "5ec652ff-3323-47bd-8679-a38e02dda73e",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "5efa92b1-d842-4df7-9ea7-cbc776cefa51",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "d70fd93e-b216-442f-8e4f-1893d8fa59ee",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "executions-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "b76d8ec6-43fb-4fa0-bb71-804009778e31",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "3ca276be-2cca-4739-863a-da5b55a05ed3",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "381b9e99-a904-4299-aa8e-71aba937ac5a",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "countries-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "cbd841e0-932a-48fd-af02-1ec337a4b2b6",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "f52e382d-f80a-4101-9d90-5b6431271861",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "f422be0b-d69d-4f43-bd0b-49a63a33da5d",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "bd-simple",
+  "stages" : [ {
+    "type" : "solr-query",
+    "id" : "twykvtrrtxvrkke29",
+    "allowedRequestHandlers" : [ "suggest", "select", "spellcheck", "get", "terms", "stats", "browse", "query" ],
+    "httpMethod" : "GET",
+    "allowFederatedSearch" : true,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "products-simple",
+  "stages" : [ {
+    "type" : "solr-query",
+    "id" : "twykvtrrtxvrkke29",
+    "allowedRequestHandlers" : [ "suggest", "select", "spellcheck", "get", "terms", "stats", "browse", "query" ],
+    "httpMethod" : "GET",
+    "allowFederatedSearch" : true,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "bd_signals_aggr-default",
+  "stages" : [ {
+    "type" : "facet",
+    "id" : "v3g14i",
+    "fieldFacets" : [ {
+      "field" : "aggr_id_s",
+      "minCount" : 1,
+      "missing" : false
+    } ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "set-params",
+    "id" : "og30udi",
+    "params" : [ {
+      "key" : "facet.range.start",
+      "value" : "0",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.end",
+      "value" : "10",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.gap",
+      "value" : "3",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range",
+      "value" : "avg_word_count_d",
+      "policy" : "append"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "set-params"
+  }, {
+    "type" : "solr-query",
+    "id" : "t4ndn29",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "bd_logs-default",
+  "stages" : [ {
+    "type" : "facet",
+    "id" : "c477022f-73ba-45a1-86a5-dd98d00fd884",
+    "fieldFacets" : [ {
+      "field" : "q_s",
+      "minCount" : 1,
+      "missing" : false
+    }, {
+      "field" : "req_fq_ss",
+      "minCount" : 1,
+      "missing" : false
+    }, {
+      "field" : "httpmethod_s",
+      "minCount" : 1,
+      "missing" : false
+    } ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "set-params",
+    "id" : "b606b600-11c3-4bef-9dfc-19d269505197",
+    "params" : [ {
+      "key" : "facet.range",
+      "value" : "totaltime_l",
+      "policy" : "append"
+    }, {
+      "key" : "f.totaltime_l.facet.range.start",
+      "value" : "0",
+      "policy" : "append"
+    }, {
+      "key" : "f.totaltime_l.facet.range.end",
+      "value" : "3000",
+      "policy" : "append"
+    }, {
+      "key" : "f.totaltime_l.facet.range.gap",
+      "value" : "50",
+      "policy" : "append"
+    }, {
+      "key" : "f.totaltime_l.facet.range.other",
+      "value" : "all",
+      "policy" : "append"
+    }, {
+      "key" : "f.totaltime_l.facet.limit",
+      "value" : "30",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range",
+      "value" : "numdocs_l",
+      "policy" : "append"
+    }, {
+      "key" : "f.numdocs_l.facet.range.start",
+      "value" : "0",
+      "policy" : "append"
+    }, {
+      "key" : "f.numdocs_l.facet.range.end",
+      "value" : "3000",
+      "policy" : "append"
+    }, {
+      "key" : "f.numdocs_l.facet.range.gap",
+      "value" : "500",
+      "policy" : "append"
+    }, {
+      "key" : "f.numdocs_l.facet.range.other",
+      "value" : "all",
+      "policy" : "append"
+    }, {
+      "key" : "f.numdocs_l.facet.limit",
+      "value" : "30",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range",
+      "value" : "timestamp_tdt",
+      "policy" : "append"
+    }, {
+      "key" : "f.timestamp_tdt.facet.range.start",
+      "value" : "NOW/DAY-7DAYS",
+      "policy" : "append"
+    }, {
+      "key" : "f.timestamp_tdt.facet.range.end",
+      "value" : "NOW/DAY+1DAY",
+      "policy" : "append"
+    }, {
+      "key" : "f.timestamp_tdt.facet.range.gap",
+      "value" : "+1DAY",
+      "policy" : "append"
+    }, {
+      "key" : "f.timestamp_tdt.facet.range.other",
+      "value" : "all",
+      "policy" : "append"
+    }, {
+      "key" : "f.timestamp_tdt.facet.limit",
+      "value" : "30",
+      "policy" : "append"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "Range Facets"
+  }, {
+    "type" : "solr-query",
+    "id" : "x4lqwzwx9axbyy14i",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "GET",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "01ed94c6-b0e5-43a6-897e-7351af820656",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "d4fba3a1-b533-4908-9a54-fbd4fc32510b",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "4892fd3e-a388-4e96-aee2-4f365f6bcf17",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "cities-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "d1722a9c-40fd-42d0-bed6-32b55923d8f1",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "11b54432-de62-4e5e-af1e-b930aff4c522",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "9f2bd1f0-804d-4d95-beba-d5c9fb1df1f0",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "cats-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "83a991b3-0681-4823-a252-09a5d2095737",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "b29c21ce-f247-4283-a0c7-6e16c85da634",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "ca42b696-05ff-4a49-9735-2a90127d15a3",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "branches-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "36a39f1b-0afc-4e61-a4ea-c2d28fa456c0",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "7e14ba2c-0a61-4767-9a20-d73414e6edde",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "7a55f02b-8343-4b71-85a0-82b79ec9bf36",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "regions-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "352acd22-de31-46e8-a26e-e854476d1574",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "9b7edd51-2725-465e-8255-f3d088a91235",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "a4bff567-f914-4e35-a972-dcd25ab372d7",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "remote_jobs-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "4a9e35ec-91b1-411b-b6de-11436c0a4752",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "d452ade2-3fda-44ee-93d4-e550b95f8e3e",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "f19d0d49-6723-4578-a132-af8cad3535ea",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "tweets_signals_aggr-default",
+  "stages" : [ {
+    "type" : "facet",
+    "id" : "v3g14i",
+    "fieldFacets" : [ {
+      "field" : "aggr_id_s",
+      "minCount" : 1,
+      "missing" : false
+    } ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "set-params",
+    "id" : "og30udi",
+    "params" : [ {
+      "key" : "facet.range.start",
+      "value" : "0",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.end",
+      "value" : "10",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.gap",
+      "value" : "3",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range",
+      "value" : "avg_word_count_d",
+      "policy" : "append"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "set-params"
+  }, {
+    "type" : "solr-query",
+    "id" : "t4ndn29",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "logs-default",
+  "stages" : [ {
+    "type" : "facet",
+    "id" : "c46665db-da06-4b99-b5cd-7a03892ad0a0",
+    "fieldFacets" : [ {
+      "field" : "level_s",
+      "limit" : 10,
+      "minCount" : 1,
+      "missing" : false
+    }, {
+      "field" : "port_s",
+      "limit" : 10,
+      "minCount" : 1,
+      "missing" : false
+    }, {
+      "field" : "ctx_pipelineId_s",
+      "limit" : 10,
+      "minCount" : 1,
+      "missing" : false
+    } ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "set-params",
+    "id" : "82c3fb17-b0fb-4e5f-95af-66123300f1f2",
+    "params" : [ {
+      "key" : "facet.range",
+      "value" : "timestamp_tdt",
+      "policy" : "append"
+    }, {
+      "key" : "f.timestamp_tdt.facet.range.start",
+      "value" : "NOW/DAY-7DAYS",
+      "policy" : "append"
+    }, {
+      "key" : "f.timestamp_tdt.facet.range.end",
+      "value" : "NOW/DAY+1DAY",
+      "policy" : "append"
+    }, {
+      "key" : "f.timestamp_tdt.facet.range.gap",
+      "value" : "+1DAY",
+      "policy" : "append"
+    }, {
+      "key" : "f.timestamp_tdt.facet.range.other",
+      "value" : "all",
+      "policy" : "append"
+    }, {
+      "key" : "f.timestamp_tdt.facet.limit",
+      "value" : "30",
+      "policy" : "append"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "Range Facets"
+  }, {
+    "type" : "solr-query",
+    "id" : "x4lqwzwx9axbyy14i",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "GET",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "bd_signals-default",
+  "stages" : [ {
+    "type" : "facet",
+    "id" : "d4f943a8-1582-4c3b-9859-923132e4b778",
+    "fieldFacets" : [ {
+      "field" : "type_s",
+      "minCount" : 1,
+      "missing" : false
+    } ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "050746d7-88ab-4804-9bf8-f88f7ff9db84",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "tweets-default",
+  "stages" : [ {
+    "type" : "blocks",
+    "id" : "b61e5c01-164d-490b-9cf5-a032ca826e5a",
+    "queryParam" : "q",
+    "rules" : [ ],
+    "type" : "blocks",
+    "skip" : false,
+    "label" : "RelevancyWorkbench-blocks"
+  }, {
+    "type" : "boosts",
+    "id" : "fdf57d68-b79f-40ba-a9f0-3077bbfc8e62",
+    "queryParam" : "q",
+    "rules" : [ ],
+    "type" : "boosts",
+    "skip" : false,
+    "label" : "RelevancyWorkbench-boosts"
+  }, {
+    "type" : "return-queryparams",
+    "id" : "qkaqncdi-0508-409f-af33-83b3a4cc371f",
+    "type" : "return-queryparams",
+    "skip" : false,
+    "label" : "return-queryparams"
+  }, {
+    "type" : "set-params",
+    "id" : "aaxuh9uc9jsmj9k9",
+    "params" : [ {
+      "key" : "sort",
+      "value" : "last_modified desc",
+      "policy" : "append"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "MatchAllRanker"
+  }, {
+    "type" : "search-fields",
+    "id" : "ym7eewmi-0508-409f-af33-83b3a4cc371f",
+    "rows" : 10,
+    "start" : 0,
+    "sort" : "",
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "minimumMatch" : "",
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "set-params",
+    "id" : "sl9m37u7xs2j5x9a4i",
+    "params" : [ {
+      "key" : "mm",
+      "value" : "2<75%",
+      "policy" : "append"
+    }, {
+      "key" : "mm.autoRelax",
+      "value" : "true",
+      "policy" : "append"
+    }, {
+      "key" : "pf",
+      "value" : "tweet^10 userScreenName^10 source^10 userLocation^10 keywords^10",
+      "policy" : "append"
+    }, {
+      "key" : "ps",
+      "value" : "2",
+      "policy" : "append"
+    }, {
+      "key" : "qs",
+      "value" : "3",
+      "policy" : "append"
+    }, {
+      "key" : "bq",
+      "value" : "last_modified:[NOW/DAY-1YEAR TO NOW/DAY+1YEAR]",
+      "policy" : "append"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "Search Settings"
+  }, {
+    "type" : "facet",
+    "id" : "cv8vbwkxzdin4xtj4i",
+    "fieldFacets" : [ {
+      "field" : "keywords",
+      "limit" : 10,
+      "minCount" : 10,
+      "missing" : false,
+      "enumCacheMinDf" : 120,
+      "threads" : 4
+    }, {
+      "field" : "userLang",
+      "limit" : 10,
+      "minCount" : 10,
+      "missing" : false,
+      "enumCacheMinDf" : 120,
+      "threads" : 4
+    } ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "set-params",
+    "id" : "tpm0a4i",
+    "params" : [ {
+      "key" : "facet.pivot",
+      "value" : "userLang,keywords",
+      "policy" : "default"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "Pivot Facet"
+  }, {
+    "type" : "set-params",
+    "id" : "e65666f6-0054-4f42-9b45-0492a251d39d",
+    "params" : [ {
+      "key" : "facet.range",
+      "value" : "last_modified",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.start",
+      "value" : "NOW/DAY-1YEAR",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.end",
+      "value" : "NOW/DAY+1YEAR",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.gap",
+      "value" : "+1DAY",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.other",
+      "value" : "all",
+      "policy" : "append"
+    }, {
+      "key" : "facet.limit",
+      "value" : "120",
+      "policy" : "append"
+    }, {
+      "key" : "facet.mincount",
+      "value" : "1",
+      "policy" : "append"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "Date Facets"
+  }, {
+    "type" : "sub-query",
+    "id" : "4913c415-6411-4fc7-92e2-3bbc0ccbaf68",
+    "key" : "subquery-results",
+    "collection" : "tweets_signals",
+    "handler" : "select",
+    "method" : "GET",
+    "parentParams" : [ "user_id" ],
+    "rollupKeys" : [ ],
+    "params" : [ {
+      "key" : "q",
+      "value" : "_query_:\"{!dismax qf='user_id_s' v=$user_id}\""
+    }, {
+      "key" : "fl",
+      "value" : "doc_id_s"
+    } ],
+    "headers" : [ ],
+    "type" : "sub-query",
+    "skip" : false,
+    "label" : "sub-query"
+  }, {
+    "type" : "rollup-rec-aggr",
+    "id" : "f5ec4a6f-9988-4661-9e59-f6bc892e6692",
+    "key" : "subquery-results",
+    "resultKey" : "rollup",
+    "rollupField" : "doc_id_s",
+    "weightFunction" : "sum",
+    "maxRows" : 100,
+    "sort" : true,
+    "type" : "rollup-rec-aggr",
+    "skip" : false,
+    "label" : "rollup-rec-aggr"
+  }, {
+    "type" : "sub-query",
+    "id" : "30fac3e2-22d4-472e-9e0b-4f1ec6cfb1c5",
+    "key" : "second-results",
+    "collection" : "tweets_signals_aggr",
+    "handler" : "select",
+    "method" : "GET",
+    "parentParams" : [ ],
+    "rollupKeys" : [ "rollup" ],
+    "params" : [ {
+      "key" : "q",
+      "value" : "_query_:\"{!dismax qf=doc_id_ss v=$rollup}\""
+    }, {
+      "key" : "fq",
+      "value" : "aggr_type_s:simple@user_id_s"
+    }, {
+      "key" : "bq",
+      "value" : "recip(doc_id_count_i,1,1000,1000)"
+    }, {
+      "key" : "rows",
+      "value" : "100"
+    }, {
+      "key" : "fl",
+      "value" : "doc_id_ss,score"
+    }, {
+      "key" : "fq",
+      "value" : "doc_id_count_i:[2 TO *]"
+    } ],
+    "headers" : [ ],
+    "type" : "sub-query",
+    "skip" : false,
+    "label" : "sub-query"
+  }, {
+    "type" : "rollup-rec-aggr",
+    "id" : "30ab87d0-0410-4f53-b8b6-c84f736tweets2a1",
+    "key" : "second-results",
+    "resultKey" : "second-rollup",
+    "rollupField" : "doc_id_ss",
+    "excludeResultsKey" : "rollup",
+    "weightField" : "score",
+    "weightFunction" : "sum",
+    "maxRows" : 20,
+    "sort" : true,
+    "type" : "rollup-rec-aggr",
+    "skip" : false,
+    "label" : "rollup-rec-aggr"
+  }, {
+    "type" : "adv-boost",
+    "id" : "4ee4d7ac-0508-409f-af33-83b3a4cc371f",
+    "boostingMethod" : "query-param",
+    "boostingParam" : "boost",
+    "key" : "second-rollup",
+    "boostFieldName" : "doc_id_s",
+    "scaleRange" : {
+      "scaleMin" : 1.0,
+      "scaleMax" : 100.0
+    },
+    "type" : "adv-boost",
+    "skip" : false,
+    "label" : "adv-boost"
+  }, {
+    "type" : "set-params",
+    "id" : "tovo0f6r",
+    "params" : [ {
+      "key" : "hl",
+      "value" : "on",
+      "policy" : "append"
+    }, {
+      "key" : "hl.fl",
+      "value" : "tweet,userScreenName,source,userLocation",
+      "policy" : "append"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "Highlighting"
+  }, {
+    "type" : "solr-query",
+    "id" : "f22d3f73-7a0d-4ca3-858b-d87443deaa6e",
+    "allowedRequestHandlers" : [ "select", "suggest", "query", "spellcheck", "get", "browse", "stats", "terms" ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "locations-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "93d0d218-f1da-4b41-b5df-6387fa328c8e",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "40ec225c-b60b-43de-99a2-ef0db09e5142",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "8f59c6e7-6ed2-4eec-9dd7-07c12553878b",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "products-default",
+  "stages" : [ {
+    "type" : "blocks",
+    "id" : "a5e2bcde-5478-413c-ab17-98a9d84609d6",
+    "queryParam" : "q",
+    "rules" : [ ],
+    "type" : "blocks",
+    "skip" : false,
+    "label" : "RelevancyWorkbench-blocks"
+  }, {
+    "type" : "boosts",
+    "id" : "0e6b2e58-541d-48b5-8964-71a41c18a779",
+    "queryParam" : "q",
+    "rules" : [ {
+      "keyword" : "samsung galaxy note",
+      "mode" : "exact",
+      "field" : "id",
+      "boosts" : [ ]
+    } ],
+    "type" : "boosts",
+    "skip" : false,
+    "label" : "RelevancyWorkbench-boosts"
+  }, {
+    "type" : "return-queryparams",
+    "id" : "qkaqncdi-0508-409f-af33-83b3a4cc371f",
+    "type" : "return-queryparams",
+    "skip" : false,
+    "label" : "return-queryparams"
+  }, {
+    "type" : "search-fields",
+    "id" : "ym7eewmi-0508-409f-af33-83b3a4cc371f",
+    "rows" : 20,
+    "start" : 0,
+    "sort" : "score desc",
+    "queryFields" : [ {
+      "field" : "_text_",
+      "boost" : 1.0
+    }, {
+      "field" : "details",
+      "boost" : 1.61
+    }, {
+      "field" : "includes",
+      "boost" : 1.31
+    }, {
+      "field" : "brand",
+      "boost" : 1.91
+    }, {
+      "field" : "features",
+      "boost" : 1.51
+    }, {
+      "field" : "color",
+      "boost" : 1.41
+    }, {
+      "field" : "title",
+      "boost" : 1.81
+    }, {
+      "field" : "description",
+      "boost" : 1.71
+    }, {
+      "field" : "keywords",
+      "boost" : 1.61
+    } ],
+    "returnFields" : [ ],
+    "minimumMatch" : "5%",
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "3wmsflkj-0508-409f-af33-83b3a4cc371f",
+    "fieldFacets" : [ {
+      "field" : "brand",
+      "limit" : 10,
+      "minCount" : 1,
+      "missing" : false,
+      "enumCacheMinDf" : 120,
+      "threads" : 4
+    }, {
+      "field" : "color",
+      "limit" : 10,
+      "minCount" : 1,
+      "missing" : false,
+      "enumCacheMinDf" : 120,
+      "threads" : 4
+    } ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "sub-query",
+    "id" : "4913c415-6411-4fc7-92e2-3bbc0ccbaf68",
+    "key" : "subquery-results",
+    "collection" : "products_signals",
+    "handler" : "select",
+    "method" : "GET",
+    "parentParams" : [ "user_id" ],
+    "rollupKeys" : [ ],
+    "params" : [ {
+      "key" : "q",
+      "value" : "_query_:\"{!dismax qf='user_id_s' v=$user_id}\""
+    }, {
+      "key" : "fl",
+      "value" : "doc_id_s"
+    } ],
+    "headers" : [ ],
+    "type" : "sub-query",
+    "skip" : false,
+    "label" : "sub-query"
+  }, {
+    "type" : "rollup-rec-aggr",
+    "id" : "f5ec4a6f-9988-4661-9e59-f6bc892e6692",
+    "key" : "subquery-results",
+    "resultKey" : "rollup",
+    "rollupField" : "doc_id_s",
+    "weightFunction" : "sum",
+    "maxRows" : 100,
+    "sort" : true,
+    "type" : "rollup-rec-aggr",
+    "skip" : false,
+    "label" : "rollup-rec-aggr"
+  }, {
+    "type" : "sub-query",
+    "id" : "30fac3e2-22d4-472e-9e0b-4f1ec6cfb1c5",
+    "key" : "second-results",
+    "collection" : "products_signals_aggr",
+    "handler" : "select",
+    "method" : "GET",
+    "parentParams" : [ ],
+    "rollupKeys" : [ "rollup" ],
+    "params" : [ {
+      "key" : "q",
+      "value" : "_query_:\"{!dismax qf=doc_id_ss v=$rollup}\""
+    }, {
+      "key" : "fq",
+      "value" : "aggr_type_s:simple@user_id_s"
+    }, {
+      "key" : "bq",
+      "value" : "recip(doc_id_count_i,1,1000,1000)"
+    }, {
+      "key" : "rows",
+      "value" : "100"
+    }, {
+      "key" : "fl",
+      "value" : "doc_id_ss,score"
+    }, {
+      "key" : "fq",
+      "value" : "doc_id_count_i:[2 TO *]"
+    } ],
+    "headers" : [ ],
+    "type" : "sub-query",
+    "skip" : false,
+    "label" : "sub-query"
+  }, {
+    "type" : "rollup-rec-aggr",
+    "id" : "30ab87d0-0410-4f53-b8b6-c84f736bd2a1",
+    "key" : "second-results",
+    "resultKey" : "second-rollup",
+    "rollupField" : "doc_id_ss",
+    "excludeResultsKey" : "rollup",
+    "weightField" : "score",
+    "weightFunction" : "sum",
+    "maxRows" : 20,
+    "sort" : true,
+    "type" : "rollup-rec-aggr",
+    "skip" : false,
+    "label" : "rollup-rec-aggr"
+  }, {
+    "type" : "adv-boost",
+    "id" : "4ee4d7ac-0508-409f-af33-83b3a4cc371f",
+    "boostingMethod" : "query-param",
+    "boostingParam" : "boost",
+    "key" : "second-rollup",
+    "boostFieldName" : "doc_id_s",
+    "scaleRange" : {
+      "scaleMin" : 1.0,
+      "scaleMax" : 100.0
+    },
+    "type" : "adv-boost",
+    "skip" : false,
+    "label" : "adv-boost"
+  }, {
+    "type" : "set-params",
+    "id" : "1pyfd2t9-0508-409f-af33-83b3a4cc371f",
+    "params" : [ {
+      "key" : "facet",
+      "value" : "true",
+      "policy" : "default"
+    }, {
+      "key" : "fl",
+      "value" : "id,title,url,brand,details,description,features,keywords,includes,color,location, resourceName,type,price_s,price,images,last_modified,fetchedDate_dt,title_lang,sizes,score",
+      "policy" : "default"
+    }, {
+      "key" : "wt",
+      "value" : "json",
+      "policy" : "default"
+    }, {
+      "key" : "json.nl",
+      "value" : "arrarr",
+      "policy" : "default"
+    }, {
+      "key" : "hl.fl",
+      "value" : "title,resourceName,url,sizes,includes,color,location,brand,type,details,description,features,price,images,keywords,title_lang",
+      "policy" : "default"
+    }, {
+      "key" : "hl",
+      "value" : "true",
+      "policy" : "default"
+    }, {
+      "key" : "facet.pivot",
+      "value" : "brand,color",
+      "policy" : "default"
+    }, {
+      "key" : "facet.range",
+      "value" : "price",
+      "policy" : "default"
+    }, {
+      "key" : "facet.range.gap",
+      "value" : "10",
+      "policy" : "default"
+    }, {
+      "key" : "facet.range.start",
+      "value" : "0",
+      "policy" : "default"
+    }, {
+      "key" : "facet.range.end",
+      "value" : "100",
+      "policy" : "default"
+    }, {
+      "key" : "face.limit",
+      "value" : "10",
+      "policy" : "default"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "set-params"
+  }, {
+    "type" : "query-logging",
+    "id" : "7dbadac1-a8e0-4f80-9dc4-bead459f5733",
+    "detailed" : true,
+    "type" : "query-logging",
+    "skip" : false,
+    "label" : "query-logging"
+  }, {
+    "type" : "solr-query",
+    "id" : "f22d3f73-7a0d-4ca3-858b-d87443deaa6e",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "GET",
+    "allowFederatedSearch" : true,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "bd-default",
+  "stages" : [ {
+    "type" : "boosts",
+    "id" : "d60db3ce-f92b-4556-ba3e-a3f69add6c51",
+    "queryParam" : "q",
+    "rules" : [ ],
+    "type" : "boosts",
+    "skip" : false,
+    "label" : "RelevancyWorkbench-boosts"
+  }, {
+    "type" : "blocks",
+    "id" : "f0dfc86f-f107-432d-8631-e9a7cc305f74",
+    "queryParam" : "q",
+    "rules" : [ ],
+    "type" : "blocks",
+    "skip" : false,
+    "label" : "RelevancyWorkbench-blocks"
+  }, {
+    "type" : "return-queryparams",
+    "id" : "ek84obt9",
+    "type" : "return-queryparams",
+    "skip" : false,
+    "label" : "return-queryparams"
+  }, {
+    "type" : "set-params",
+    "id" : "ov5lbjp6tcbf8yqfr",
+    "params" : [ {
+      "key" : "sort",
+      "value" : "last_modified desc",
+      "policy" : "default"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "MatchAllRanker",
+    "condition" : ""
+  }, {
+    "type" : "search-fields",
+    "id" : "e6ei2j4i",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "minimumMatch" : "5%",
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "set-params",
+    "id" : "sl9m37u7xs2j5x9a4i",
+    "params" : [ {
+      "key" : "mm",
+      "value" : "2<75%",
+      "policy" : "append"
+    }, {
+      "key" : "mm.autoRelax",
+      "value" : "true",
+      "policy" : "append"
+    }, {
+      "key" : "ps",
+      "value" : "2",
+      "policy" : "append"
+    }, {
+      "key" : "qs",
+      "value" : "3",
+      "policy" : "append"
+    }, {
+      "key" : "bq",
+      "value" : "last_modified:[NOW/DAY-1YEAR TO NOW/DAY+1YEAR]",
+      "policy" : "append"
+    }, {
+      "key" : "pf",
+      "value" : "title ^10 details ^10 description ^10 text",
+      "policy" : "append"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "Search Settings"
+  }, {
+    "type" : "facet",
+    "id" : "86eef67e-5dd8-4e40-9df9-f6eb9eb369d4",
+    "fieldFacets" : [ {
+      "field" : "title_lang",
+      "limit" : 6,
+      "minCount" : 10,
+      "missing" : false
+    }, {
+      "field" : "keywords",
+      "limit" : 6,
+      "minCount" : 10,
+      "missing" : false
+    }, {
+      "field" : "color",
+      "limit" : 6,
+      "minCount" : 10,
+      "missing" : false
+    }, {
+      "field" : "city",
+      "limit" : 6,
+      "minCount" : 10,
+      "missing" : false
+    } ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "set-params",
+    "id" : "e65666f6-0054-4f42-9b45-0492a251d39d",
+    "params" : [ {
+      "key" : "facet.range",
+      "value" : "last_modified",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.start",
+      "value" : "NOW/DAY-1YEAR",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.end",
+      "value" : "NOW/DAY+1YEAR",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.gap",
+      "value" : "+1DAY",
+      "policy" : "append"
+    }, {
+      "key" : "facet.range.other",
+      "value" : "all",
+      "policy" : "append"
+    }, {
+      "key" : "facet.limit",
+      "value" : "120",
+      "policy" : "append"
+    }, {
+      "key" : "facet.mincount",
+      "value" : "1",
+      "policy" : "append"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "Other Facets"
+  }, {
+    "type" : "sub-query",
+    "id" : "4913c415-6411-4fc7-92e2-3bbc0ccbaf68",
+    "key" : "subquery-results",
+    "collection" : "bd_signals",
+    "handler" : "select",
+    "method" : "GET",
+    "parentParams" : [ "user_id" ],
+    "rollupKeys" : [ ],
+    "params" : [ {
+      "key" : "q",
+      "value" : "_query_:\"{!dismax qf='user_id_s' v=$user_id}\""
+    }, {
+      "key" : "fl",
+      "value" : "doc_id_s"
+    } ],
+    "headers" : [ ],
+    "type" : "sub-query",
+    "skip" : false,
+    "label" : "sub-query"
+  }, {
+    "type" : "rollup-rec-aggr",
+    "id" : "f5ec4a6f-9988-4661-9e59-f6bc892e6692",
+    "key" : "subquery-results",
+    "resultKey" : "rollup",
+    "rollupField" : "doc_id_s",
+    "weightFunction" : "sum",
+    "maxRows" : 100,
+    "sort" : true,
+    "type" : "rollup-rec-aggr",
+    "skip" : false,
+    "label" : "rollup-rec-aggr"
+  }, {
+    "type" : "sub-query",
+    "id" : "30fac3e2-22d4-472e-9e0b-4f1ec6cfb1c5",
+    "key" : "second-results",
+    "collection" : "bd_signals_aggr",
+    "handler" : "select",
+    "method" : "GET",
+    "parentParams" : [ ],
+    "rollupKeys" : [ "rollup" ],
+    "params" : [ {
+      "key" : "q",
+      "value" : "_query_:\"{!dismax qf=doc_id_ss v=$rollup}\""
+    }, {
+      "key" : "fq",
+      "value" : "aggr_type_s:simple@user_id_s"
+    }, {
+      "key" : "bq",
+      "value" : "recip(doc_id_count_i,1,1000,1000)"
+    }, {
+      "key" : "rows",
+      "value" : "100"
+    }, {
+      "key" : "fl",
+      "value" : "doc_id_ss,score"
+    }, {
+      "key" : "fq",
+      "value" : "doc_id_count_i:[2 TO *]"
+    } ],
+    "headers" : [ ],
+    "type" : "sub-query",
+    "skip" : false,
+    "label" : "sub-query"
+  }, {
+    "type" : "rollup-rec-aggr",
+    "id" : "30ab87d0-0410-4f53-b8b6-c84f736bd2a1",
+    "key" : "second-results",
+    "resultKey" : "second-rollup",
+    "rollupField" : "doc_id_ss",
+    "excludeResultsKey" : "rollup",
+    "weightField" : "score",
+    "weightFunction" : "sum",
+    "maxRows" : 20,
+    "sort" : true,
+    "type" : "rollup-rec-aggr",
+    "skip" : false,
+    "label" : "rollup-rec-aggr"
+  }, {
+    "type" : "adv-boost",
+    "id" : "4ee4d7ac-0508-409f-af33-83b3a4cc371f",
+    "boostingMethod" : "query-param",
+    "boostingParam" : "boost",
+    "key" : "second-rollup",
+    "boostFieldName" : "doc_id_s",
+    "scaleRange" : {
+      "scaleMin" : 1.0,
+      "scaleMax" : 100.0
+    },
+    "type" : "adv-boost",
+    "skip" : false,
+    "label" : "adv-boost"
+  }, {
+    "type" : "set-params",
+    "id" : "tovo0f6r",
+    "params" : [ {
+      "key" : "hl",
+      "value" : "on",
+      "policy" : "append"
+    }, {
+      "key" : "hl.fl",
+      "value" : "title,description,features,images,keywords,title_lang,color,city,parent_s,brand,url,type",
+      "policy" : "replace"
+    } ],
+    "type" : "set-params",
+    "skip" : false,
+    "label" : "Highlighting"
+  }, {
+    "type" : "solr-query",
+    "id" : "f22d3f73-7a0d-4ca3-858b-d87443deaa6e",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "tips-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "144a465e-e422-41ca-b590-136f348cb70b",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "79794b5e-a5e2-4f84-985b-924266a01e4b",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "a0c9d7e4-53f8-48c2-8e37-e66bc3d771bb",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "users-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "bcb96264-6caa-4971-8501-7c30f31ae6de",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "ccc5a6d5-f252-4bbc-8ae1-df95c8a8f899",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "6ea52e51-7704-4119-b00a-c910e78deb20",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "tweets-simple",
+  "stages" : [ {
+    "type" : "solr-query",
+    "id" : "twykvtrrtxvrkke29",
+    "allowedRequestHandlers" : [ "suggest", "select", "spellcheck", "get", "terms", "stats", "browse", "query" ],
+    "httpMethod" : "GET",
+    "allowFederatedSearch" : true,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "configs-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "ad80143c-0d80-46f9-8046-4c34f6162ba0",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "68ec6617-6efc-43c3-bc86-8bdbbe39283e",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "968f823e-3ae3-47fa-8b5d-f8f891a2c7cc",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+}, {
+  "id" : "system_banana-default",
+  "stages" : [ {
+    "type" : "search-fields",
+    "id" : "83fddd5f-a3a9-4958-914e-27f1ee1fa281",
+    "rows" : 10,
+    "start" : 0,
+    "queryFields" : [ ],
+    "returnFields" : [ ],
+    "type" : "search-fields",
+    "skip" : false,
+    "label" : "search-fields"
+  }, {
+    "type" : "facet",
+    "id" : "0761be85-d636-4218-b22e-21f2aa219b98",
+    "fieldFacets" : [ ],
+    "type" : "facet",
+    "skip" : false,
+    "label" : "facet"
+  }, {
+    "type" : "solr-query",
+    "id" : "343a4432-8595-4573-9bde-13a3d3d51f98",
+    "allowedRequestHandlers" : [ ],
+    "httpMethod" : "POST",
+    "allowFederatedSearch" : false,
+    "type" : "solr-query",
+    "skip" : false,
+    "label" : "solr-query"
+  } ],
+  "properties" : { }
+} ]

@@ -1,0 +1,46 @@
+{
+  "stages": [
+    {
+      "sort": "timestamp_tdt desc", 
+      "queryFields": [], 
+      "rows": 10, 
+      "skip": false, 
+      "returnFields": [], 
+      "label": "search-fields", 
+      "start": 0, 
+      "type": "search-fields", 
+      "id": "07qqcumvy4dyrpb9"
+    }, 
+    {
+      "skip": false, 
+      "fieldFacets": [
+        {
+          "field": "type_s", 
+          "missing": false, 
+          "limit": 10, 
+          "minCount": 1
+        }, 
+        {
+          "field": "params.source_s", 
+          "missing": false, 
+          "limit": 10, 
+          "minCount": 1
+        }
+      ], 
+      "type": "facet", 
+      "id": "805e6679-4f97-4491-a340-c01813137113", 
+      "label": "facet"
+    }, 
+    {
+      "allowedRequestHandlers": [], 
+      "skip": false, 
+      "label": "solr-query", 
+      "httpMethod": "POST", 
+      "allowFederatedSearch": false, 
+      "type": "solr-query", 
+      "id": "5230e694-ec41-471e-a9fe-445c8ab2caf2"
+    }
+  ], 
+  "id": "bd_signals-default", 
+  "properties": {}
+}

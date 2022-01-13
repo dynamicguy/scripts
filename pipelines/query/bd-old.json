@@ -1,0 +1,90 @@
+{
+  "stages": [
+    {
+      "skip": false, 
+      "type": "return-queryparams", 
+      "id": "ek84obt9", 
+      "label": "return-queryparams"
+    }, 
+    {
+      "queryFields": [], 
+      "rows": 10, 
+      "skip": false, 
+      "minimumMatch": "5%", 
+      "returnFields": [], 
+      "label": "search-fields", 
+      "start": 0, 
+      "type": "search-fields", 
+      "id": "e6ei2j4i"
+    }, 
+    {
+      "skip": false, 
+      "fieldFacets": [
+        {
+          "minCount": 1, 
+          "missing": false, 
+          "field": "type", 
+          "threads": 4, 
+          "enumCacheMinDf": 120, 
+          "limit": 10
+        }, 
+        {
+          "sort": "count", 
+          "threads": 4, 
+          "missing": false, 
+          "field": "keywords", 
+          "limit": 10, 
+          "minCount": 1, 
+          "enumCacheMinDf": 120
+        }
+      ], 
+      "type": "facet", 
+      "id": "3wm", 
+      "label": "facet"
+    }, 
+    {
+      "params": [
+        {
+          "policy": "default", 
+          "value": "id,title,resourceName,location,brand,type,price_s,details,description,features,price,images,keywords,last_modified,fetchedDate_dt,keywords,title_lang,score", 
+          "key": "fl"
+        }, 
+        {
+          "policy": "default", 
+          "value": "json", 
+          "key": "wt"
+        }, 
+        {
+          "policy": "default", 
+          "value": "arrarr", 
+          "key": "json.nl"
+        }, 
+        {
+          "policy": "default", 
+          "value": "id,title,resourceName,size,includes,color,location,brand,type,price_s,details,description,features,price,images,keywords,title_lang", 
+          "key": "hl.fl"
+        }, 
+        {
+          "policy": "default", 
+          "value": "true", 
+          "key": "hl"
+        }
+      ], 
+      "label": "set-params", 
+      "type": "set-params", 
+      "id": "1pyfd2t9", 
+      "skip": false
+    }, 
+    {
+      "allowedRequestHandlers": [], 
+      "skip": false, 
+      "label": "solr-query", 
+      "httpMethod": "GET", 
+      "allowFederatedSearch": false, 
+      "type": "solr-query", 
+      "id": "f22d3f73-7a0d-4ca3-858b-d87443deaa6e"
+    }
+  ], 
+  "id": "bd-old", 
+  "properties": {}
+}
