@@ -17,7 +17,7 @@ password = 'password123'
 
 def do_call_api(data):
     headers = {"Content-type": "application/json", "Accept": "application/json", "Authorization": "Basic YWRtaW46emFxMTIzNDU="}
-    conn = httplib.HTTPConnection('118.67.215.231', 8764)
+    conn = httplib.HTTPConnection('localhost', 8764)
     conn.request("POST", "/api/apollo/connectors/datasources", data, headers)
     response = conn.getresponse()
     
@@ -32,10 +32,10 @@ def run(file):
     for item in data:
         did = item.get('id')
         cn = item.get('properties').get('collection')
-        if('twitter' in did):
+        # if('twitter' in did):
         #     if('skillshill' in cn):
         #         pprint('post data for ' + did + ' with collection as ' + cn)
-            do_call_api(json.dumps(item))
+        do_call_api(json.dumps(item))
         
 
 if __name__ == "__main__" :

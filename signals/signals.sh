@@ -4,10 +4,10 @@
 
 
 if [ -z $FUSION_API ]; then
-  FUSION_API=http://118.67.215.231:8765/api/v1
+  FUSION_API=http://localhost:8765/api/v1
 fi
 
-COLLECTION=tweets
+COLLECTION=bd
 DATA_FILE=signals.json
 AGGREGATION_DEFINITION=aggregation_definition.json
 JSON='Content-type:application/json'

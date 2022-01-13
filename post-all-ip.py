@@ -17,7 +17,7 @@ password = 'zaq12345'
 
 def do_call_api(did, data):
     headers = {"Content-type": "application/json", "Accept": "application/json", "Authorization": "Basic YWRtaW46emFxMTIzNDU="}
-    conn = httplib.HTTPConnection('118.67.215.231', 8764)
+    conn = httplib.HTTPConnection('localhost', 8764)
     conn.request("POST", "/api/apollo/index-pipelines/", data, headers)
     response = conn.getresponse()
     print(response.status, response.reason)
